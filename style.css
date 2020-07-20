@@ -5,12 +5,16 @@
 }
 
 :root {
-  --backgroundColor: #79addc;
+  --backgroundColor: black;
   --headingColor: #fcf5c7;
+  --fontFamily: "Times New Roman", Times, serif;
+  --backgroundImage: url("./images/banner.png");
+  --spacingWidth: 90vw;
 }
 
 body {
   background: var(--backgroundColor);
+  font-family: var(--fontFamily);
 }
 
 nav {
@@ -18,15 +22,13 @@ nav {
   margin: 2px;
   position: fixed;
   top: 0;
-  width: 100vw;
-  /* transition: all 0.3s linear; */
+  width: var(--spacingWidth);
 }
 
 nav button {
   float: left;
   width: 33.3vw;
   font-weight: bold;
-  font-family: "Courier New", Courier, monospace;
   font-size: 1em;
   padding: 5px;
   border-radius: 5px;
@@ -34,16 +36,60 @@ nav button {
   transition: all 1s linear;
 }
 
-nav:hover button {
+/* nav:hover button {
   visibility: visible;
 }
 
 nav:hover {
   background: yellow;
+} */
+
+div {
+  position: relative;
+}
+
+section {
+  width: 100%;
+  margin: 10px auto;
+}
+
+section h1 {
+  color: var(--headingColor);
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 10px;
+}
+
+section img {
+  width: 90%;
+  border-radius: 20%;
+  border: 3px solid white;
+  display: block;
+  margin: auto;
+}
+
+button {
+  background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+  border: 2px solid white;
+  border-radius: 15%;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: linear-gradient(to top, #2dabf9 5%, #0688fa 100%);
+}
+
+button:active {
+  position: relative;
+  top: 1px;
 }
 
 .banner-img {
-  background: url("./banner.png");
+  background: var(--backgroundImage);
   background-repeat: no-repeat;
   width: 100vw;
   height: 80vh;
@@ -54,146 +100,121 @@ nav:hover {
   align-items: center;
 }
 
-.banner-text {
+.banner-img div {
   width: 100%;
-  height: 25%;
   color: white;
   background: black;
   opacity: 0.8;
   text-align: center;
-  font-size: 1em;
-  font-family: "Times New Roman", Times, serif;
-  padding: 10px;
+  padding: 5px;
   text-transform: capitalize;
   display: block;
-}
-
-.about {
-  width: 100vw;
-  font-family: "Times New Roman", Times, serif;
-  margin: 10px auto;
-}
-
-.about-heading {
-  color: var(--headingColor);
-  font-size: 2.5rem;
-  text-align: center;
-  padding: 10px;
-}
-
-.portrait-img {
-  width: 50%;
-  border-radius: 20%;
-  border: 3px solid white;
-  display: block;
-  margin: auto;
+  font-size: 1.5rem;
 }
 
 .about-text {
   /* text-align: left; */
-  padding: 10px 0px 0px 0px;
+  padding: 10px 0px;
   margin: 0 auto;
   text-align: justify;
-  width: 90vw;
-}
-
-.projects {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.projects-heading {
-  color: var(--headingColor);
-  font-size: 2.5rem;
-  text-align: center;
-  padding-bottom: 10px;
+  width: 90%;
+  color: white;
+  font-size: 1.2rem;
 }
 
 #chessCAMO {
-  position: relative;
+  margin: 10px 5%;
+  font-weight: lighter;
+  text-align: justify;
 }
 
 #chessCAMO h2 {
   text-decoration: underline;
   color: white;
   font-size: 1.75rem;
-  padding: 5px;
-  margin: auto;
-  transform: translateX(5%);
+  padding: 10px 0;
+  text-align: center;
 }
 
 #chessCAMO img {
-  width: 90vw;
-  display: block;
-  margin: auto;
-  padding: 10px;
+  /* border: none; */
+  border-radius: 0;
+  margin: 0 auto;
+  width: 100%;
 }
 
 #chessCAMO h3 {
   font-size: 1.5rem;
-  padding: 5px;
-  transform: translateX(5%);
+  padding: 10px 0;
+  color: white;
 }
 
 #chessCAMO p {
-  width: 90%;
+  width: 100%;
   color: white;
-  text-align: justify;
-  margin: auto;
+  font-size: 1.2rem;
+}
+
+#chessCAMO a {
+  text-decoration: none;
+  color: rgb(197, 209, 248);
+}
+
+#chessCAMO a:active {
+  color: white;
+}
+
+#chessCAMO ul {
+  padding: 0 5%;
+  color: white;
+  font-size: 1.1rem;
+}
+
+#chessCAMO li {
+  padding: 0;
+  width: 100%;
 }
 
 #chessCAMO button {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  padding: 10px;
-  border-radius: 20%;
-  border: 2px solid white;
-  background: rgb(77, 75, 75);
-  color: white;
-  height: 7%;
+  margin: 10px auto;
+  display: block;
 }
 
-.contact {
-  width: 90vw;
+form {
+  width: 90%;
   margin: auto;
-  padding: 10px 0px;
+  padding: 5px;
+  border: 2px dotted white;
+  color: white;
 }
 
-.contact h1,
-.contact h3 {
+form h1 {
   color: var(--headingColor);
   text-align: center;
 }
 
-.contact-form {
-  border: 2px dotted black;
-  padding: 10px;
-  width: 100%;
-  color: white;
-}
-
-.contact-form p {
+form p {
   margin: 5px 0px;
   font-weight: bolder;
 }
 
-.contact-form input {
+form input {
   width: 100%;
   padding: 5px;
   margin: 5px 0px;
 }
 
-.contact-form input:focus {
+form input:focus {
   background: rgba(255, 255, 0, 0.8);
 }
 
-.contact-form input:required {
+form input:required {
   border: 1px solid red;
 }
 
-.contact-form textarea {
-  padding: 5px;
+form textarea {
   max-width: 100%;
+  max-height: 50vh;
   width: 100%;
 }
 
@@ -202,27 +223,28 @@ footer {
   color: white;
   position: relative;
   margin: auto;
-  width: 90vw;
+  width: var(--spacingWidth);
+  padding: 10px;
 }
 
-.social {
+footer div {
   margin: 10px auto;
 }
 
-.social i {
-  padding-right: 20px;
+.fab {
+  padding: 10px;
   transform: scale(2);
-  color: black;
+  color: white;
 }
 
 #up-arrow {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 0;
-  color: black;
+  color: white;
 }
 
-@media screen and (min-width: 376px) {
+/* @media screen and (min-width: 600px) {
   .banner-img {
     height: 100vh;
     background-position: center;
@@ -230,7 +252,6 @@ footer {
 
   .banner-text {
     width: 100%;
-    height: 25%;
     font-size: 2rem;
   }
 
@@ -239,17 +260,18 @@ footer {
   }
 
   .portrait-img {
-    width: 15%;
+    width: 10%;
     float: right;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5%;
   }
 
   .about-text {
     padding: 10px 10px 0px 0px;
     width: 80%;
     margin: 10px 2%;
+    font-size: 2em;
   }
 
   #chessCAMO {
@@ -273,4 +295,4 @@ footer {
     top: 70%;
     left: 70%;
   }
-}
+} */

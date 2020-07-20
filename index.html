@@ -22,7 +22,7 @@
     </nav>
 
     <div class="banner-img">
-      <div class="banner-text">
+      <div>
         <h1>
           Hi, I'm Lior.
         </h1>
@@ -35,11 +35,10 @@
     </div>
 
     <!-- A little introduction about myself -->
-    <section class="about">
-      <h1 class="about-heading">Who Am I?</h1>
+    <section>
+      <h1>Who Am I?</h1>
       <img
-        class="portrait-img"
-        src="./portrait.jpeg"
+        src="./images/portrait.jpeg"
         alt="Portrait image - me playing chess in nature"
       />
       <p class="about-text">
@@ -55,26 +54,38 @@
     </section>
 
     <!-- Here I discuss projects, both on going and completed -->
-    <section class="projects">
-      <h1 class="projects-heading">Projects</h1>
+    <section>
+      <h1>Projects</h1>
       <div id="chessCAMO">
         <h2>chessCAMO</h2>
         <img
-          src="./gui.gif"
+          src="./images/gui.gif"
           alt="Graphical User Interface illustration for the final product"
         />
-        <div class="description-details">
+        <div>
           <h3>Description:</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi
-            sint quia accusamus maiores saepe quis nemo ipsum, iusto possimus.
+            chessCAMO is a newly proposed chess engine with a built-in variant
+            that stands for <strong>C</strong>alculations
+            <strong>A</strong>lways <strong>M</strong>ake
+            <strong>O</strong>pportunities and was inspired by the very popular
+            chess variant
+            <a href="https://en.wikipedia.org/wiki/Crazyhouse">Crazyhouse</a>.
+            The "CAMO" portion comes from the idea that in this variant, at any
+            turn, a player can sacrifice making a move to replace one of their
+            pieces with a piece from the "piece reservoir". This has the affect
+            of camouflaging each piece that is currently on the board.
           </p>
+
           <h3>Implementation Details:</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut
-            aliquid optio iure deserunt harum voluptatibus animi? Vero,
-            voluptates. Doloremque, explicabo!
-          </p>
+          <ul>
+            <li>C++, Makefile, YAML</li>
+            <li>Markdown, Doxygen &rightarrow; Documentation</li>
+            <li>Git &rightarrow; Version Control</li>
+            <li>GTest &rightarrow; Unit Testing</li>
+            <li>Continuous Integration &rightarrow; GitHub Actions</li>
+            <li>SFML &rightarrow; Graphical User Interface</li>
+          </ul>
         </div>
         <a href="https://github.com/lbragile/chessCAMO">
           <button type="button">GitHub</button>
@@ -83,30 +94,19 @@
     </section>
 
     <!-- Send me a message -->
-    <div class="contact">
+    <section>
       <h1>
-        Have any questions?
+        Have questions?
       </h1>
-
-      <h3>Send me a message!</h3>
-
-      <form
-        class="contact-form"
-        method="post"
-        action="mailto:lbragile.masc@gmail.com"
-      >
+      <form method="post" action="mailto:lbragile.masc@gmail.com">
         <p>Name:</p>
         <input type="text" placeholder="Your Full Name" required />
-        <br />
         <p>E-mail:</p>
         <input type="email" placeholder="Your e-mail" required />
-        <br />
         <p>Subject:</p>
         <input type="text" placeholder="Subject of Inquiry" required />
-        <br />
         <p>Phone Number:</p>
         <input type="tel" placeholder="Your phone number (Optional)" />
-        <br />
         <p>Message:</p>
         <textarea
           rows="10"
@@ -118,10 +118,10 @@
         <br />
         <input type="submit" value="Send Message" />
       </form>
-    </div>
+    </section>
 
     <footer id="footer">
-      <div class="social">
+      <div>
         <a href="https://github.com/lbragile/"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/liorbragilevsky/"
           ><i class="fab fa-linkedin"></i
@@ -129,6 +129,7 @@
       </div>
 
       &copy; Lior Bragilevsky 2020
+
       <a id="up-arrow" href="http://localhost:5500">
         <i class="fas fa-arrow-up"></i
       ></a>
