@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio &diams; Lior Bragilevsky</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/27cdeab4af.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- <div class="banner">
+      <h1>hi there</h1>
+    </div> -->
+
+    <nav class="nav-bar">
+      <button type="button" class="nav-about">About</button>
+      <button type="button" class="nav-project">Projects</button>
+      <button type="button" class="nav-contact">Contact</button>
+    </nav>
+
+    <div class="banner-img">
+      <div class="banner-text">
+        <h1>
+          Hi, I'm Lior.
+        </h1>
+        <br />
+        <h2>
+          Like what you see? <br />
+          Let's connect!
+        </h2>
+      </div>
+    </div>
+
+    <!-- A little introduction about myself -->
+    <section class="about">
+      <h1 class="about-heading">Who Am I?</h1>
+      <img
+        class="portrait-img"
+        src="./portrait.jpeg"
+        alt="Portrait image - me playing chess in nature"
+      />
+      <p class="about-text">
+        I was a MASc research student at Simon Fraser University’s Multimedia
+        Laboratory until my recent graduation in April 2020. I recieved BASc
+        (<em>Honours with Distinction</em>) in Electronics Engineering from
+        Simon Fraser University in 2018. During this time, I worked on a variety
+        of machine learning projects and enhanced my coding skills both in a
+        team and individual setting. I <em> love </em> learning new things and
+        constantly apply my knowledge to unique problems in order to solve and
+        overcome obstacles that seemed insurmountable at first.
+      </p>
+    </section>
+
+    <!-- Here I discuss projects, both on going and completed -->
+    <section class="projects">
+      <h1 class="projects-heading">Projects</h1>
+      <div id="chessCAMO">
+        <h2>chessCAMO</h2>
+        <img
+          src="./gui.gif"
+          alt="Graphical User Interface illustration for the final product"
+        />
+        <div class="description-details">
+          <h3>Description:</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi
+            sint quia accusamus maiores saepe quis nemo ipsum, iusto possimus.
+          </p>
+          <h3>Implementation Details:</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut
+            aliquid optio iure deserunt harum voluptatibus animi? Vero,
+            voluptates. Doloremque, explicabo!
+          </p>
+        </div>
+        <a href="https://github.com/lbragile/chessCAMO">
+          <button type="button">GitHub</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Send me a message -->
+    <div class="contact">
+      <h1>
+        Have any questions?
+      </h1>
+
+      <h3>Send me a message!</h3>
+
+      <form
+        class="contact-form"
+        method="post"
+        action="mailto:lbragile.masc@gmail.com"
+      >
+        <p>Name:</p>
+        <input type="text" placeholder="Your Full Name" required />
+        <br />
+        <p>E-mail:</p>
+        <input type="email" placeholder="Your e-mail" required />
+        <br />
+        <p>Subject:</p>
+        <input type="text" placeholder="Subject of Inquiry" required />
+        <br />
+        <p>Phone Number:</p>
+        <input type="tel" placeholder="Your phone number (Optional)" />
+        <br />
+        <p>Message:</p>
+        <textarea
+          rows="10"
+          cols="30"
+          onfocus="this.value=''"
+          placeholder="If you would like to connect, please share your social media and/or website here..."
+        >
+        </textarea>
+        <br />
+        <input type="submit" value="Send Message" />
+      </form>
+    </div>
+
+    <footer id="footer">
+      <div class="social">
+        <a href="https://github.com/lbragile/"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/liorbragilevsky/"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+
+      &copy; Lior Bragilevsky 2020
+      <a id="up-arrow" href="http://localhost:5500">
+        <i class="fas fa-arrow-up"></i
+      ></a>
+    </footer>
+  </body>
+</html>
