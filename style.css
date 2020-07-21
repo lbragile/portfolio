@@ -17,6 +17,7 @@
   --borderColor: rgba(245, 246, 250, 1);
   --iconColor: rgba(245, 246, 250, 1);
   --formColor: rgba(245, 246, 250, 1);
+  --menuColor: rgba(251, 197, 49, 1);
 
   --focusColor: yellow;
   --requiredColor: #ee5253;
@@ -31,41 +32,16 @@ body {
   font-family: var(--fontFamily);
 }
 
-nav {
-  background: transparent;
-  margin: 2px;
-  position: fixed;
-  top: 0;
-  width: var(--contentWidth);
-}
-
-nav button {
-  float: left;
-  width: 33.3vw;
-  font-weight: bold;
-  font-size: 1em;
-  padding: 5px;
-  border-radius: 5px;
-  visibility: hidden;
-  transition: all 1s linear;
-}
-
-/* nav:hover button {
-  visibility: visible;
-}
-
-nav:hover {
-  background: yellow;
-} */
-
-div {
+div,
+nav,
+section,
+footer {
   position: relative;
 }
 
 section {
   width: 100%;
   margin: 10px auto;
-  position: relative;
 }
 
 section h1 {
@@ -112,6 +88,53 @@ button:active {
   top: 1px;
 }
 
+.fa-bars {
+  color: var(--menuColor);
+  font-size: 1.5em;
+  border: 3px solid var(--menuColor);
+  padding: 4px;
+  border-radius: 15%;
+
+  text-align: center;
+
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  z-index: 2;
+}
+
+nav ul {
+  color: var(--menuColor);
+  background: black;
+  opacity: 0.9;
+  border: 3px solid var(--menuColor);
+  padding: 20px;
+  border-radius: 5%;
+
+  color: white;
+  list-style: none;
+  font-size: 1.5em;
+  font-weight: bold;
+
+  text-align: center;
+
+  position: fixed;
+  top: 5px;
+  right: 5px;
+
+  z-index: 1;
+}
+
+nav li {
+  padding: 10px 0;
+}
+
+nav li:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
 .banner-img {
   background: var(--backgroundImage);
   background-repeat: no-repeat;
@@ -130,7 +153,7 @@ button:active {
   background: black;
   opacity: 0.8;
   text-align: center;
-  padding: 5px;
+  /* padding: 5px; */
   text-transform: capitalize;
   display: block;
   font-size: 1.5rem;
@@ -208,7 +231,7 @@ button:active {
 form {
   width: var(--contentWidth);
   margin: auto;
-  padding: 5px;
+  padding: 10px;
   border: 2px dotted var(--borderColor);
   color: var(--textColor);
 }
@@ -219,7 +242,7 @@ form h1 {
 }
 
 form p {
-  margin: 5px 0px;
+  margin: 0 0 5px 0;
   font-weight: bolder;
   color: var(--formColor);
 }
@@ -227,7 +250,8 @@ form p {
 form input {
   width: 100%;
   padding: 5px;
-  margin: 5px 0px;
+  margin: 0 0 20px 0;
+  font-family: var(--fontFamily);
 }
 
 form input:focus {
@@ -244,6 +268,17 @@ form textarea {
   max-width: 100%;
   max-height: 50vh;
   width: 100%;
+  font-size: 1.1em;
+  padding: 10px;
+  font-family: var(--fontFamily);
+}
+
+.form-buttons {
+  margin: 10px auto 0 auto;
+}
+
+.form-buttons:focus {
+  background: var(--formColor);
 }
 
 footer {
@@ -270,6 +305,11 @@ footer div {
   bottom: 10px;
   right: 0;
   color: white;
+  text-decoration: none;
+}
+
+#up-arrow p:hover {
+  color: yellow;
 }
 
 /* Medium Devices (Landscape) */
@@ -303,6 +343,10 @@ footer div {
 
   #chessCAMO h2 {
     font-size: 2rem;
+  }
+
+  form textarea {
+    font-size: 1.1rem;
   }
 }
 
@@ -370,6 +414,10 @@ footer div {
   #chessCAMO button {
     margin: 10px auto;
     display: block;
+  }
+
+  form textarea {
+    font-size: 1.1rem;
   }
 }
 
@@ -455,6 +503,7 @@ footer div {
 
   form textarea {
     min-height: 25vh;
+    font-size: 1.3rem;
   }
 }
 
@@ -539,6 +588,7 @@ footer div {
 
   form textarea {
     min-height: 25vh;
+    font-size: 1.3rem;
   }
 }
 
@@ -624,5 +674,6 @@ footer div {
 
   form textarea {
     min-height: 25vh;
+    font-size: 1.4rem;
   }
 }
