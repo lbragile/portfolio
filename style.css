@@ -5,11 +5,25 @@
 }
 
 :root {
-  --backgroundColor: black;
-  --headingColor: #fcf5c7;
+  --backgroundColor: #333;
+  --h1Color: rgba(251, 197, 49, 1);
+  --h2Color: rgba(232, 65, 24, 1);
+  --h3Color: rgba(68, 189, 50, 1);
+  --linkColor: rgba(0, 168, 255, 1);
+
+  --buttonColorTop: #54a0ff;
+  --buttonColorBottom: #2e86de;
+  --textColor: white;
+  --borderColor: rgba(245, 246, 250, 1);
+  --iconColor: rgba(245, 246, 250, 1);
+  --formColor: rgba(245, 246, 250, 1);
+
+  --focusColor: yellow;
+  --requiredColor: #ee5253;
+
   --fontFamily: "Times New Roman", Times, serif;
   --backgroundImage: url("./images/banner.png");
-  --spacingWidth: 90vw;
+  --contentWidth: 90%;
 }
 
 body {
@@ -22,7 +36,7 @@ nav {
   margin: 2px;
   position: fixed;
   top: 0;
-  width: var(--spacingWidth);
+  width: var(--contentWidth);
 }
 
 nav button {
@@ -51,36 +65,46 @@ div {
 section {
   width: 100%;
   margin: 10px auto;
+  position: relative;
 }
 
 section h1 {
-  color: var(--headingColor);
+  color: var(--h1Color);
   font-size: 2.5rem;
   text-align: center;
   padding: 10px;
 }
 
+/* My portrait photo */
 section img {
-  width: 90%;
+  width: 75%;
   border-radius: 20%;
-  border: 3px solid white;
+  border: 3px solid var(--borderColor);
   display: block;
   margin: auto;
 }
 
 button {
-  background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
-  border: 2px solid white;
+  background: linear-gradient(
+    to bottom,
+    var(--buttonColorTop),
+    var(--buttonColorBottom)
+  );
+  border: 2px solid var(--borderColor);
   border-radius: 15%;
   display: inline-block;
   cursor: pointer;
-  color: white;
+  color: var(--textColor);
   padding: 10px;
   font-size: 1rem;
 }
 
 button:hover {
-  background: linear-gradient(to top, #2dabf9 5%, #0688fa 100%);
+  background: linear-gradient(
+    to top,
+    var(--buttonColorTop),
+    var(--buttonColorBottom)
+  );
 }
 
 button:active {
@@ -117,8 +141,8 @@ button:active {
   padding: 10px 0px;
   margin: 0 auto;
   text-align: justify;
-  width: 90%;
-  color: white;
+  width: var(--contentWidth);
+  color: var(--textColor);
   font-size: 1.2rem;
 }
 
@@ -130,7 +154,7 @@ button:active {
 
 #chessCAMO h2 {
   text-decoration: underline;
-  color: white;
+  color: var(--h2Color);
   font-size: 1.75rem;
   padding: 10px 0;
   text-align: center;
@@ -146,32 +170,33 @@ button:active {
 #chessCAMO h3 {
   font-size: 1.5rem;
   padding: 10px 0;
-  color: white;
+  color: var(--h3Color);
 }
 
 #chessCAMO p {
   width: 100%;
-  color: white;
+  color: var(--textColor);
   font-size: 1.2rem;
 }
 
 #chessCAMO a {
   text-decoration: none;
-  color: rgb(197, 209, 248);
+  color: var(--linkColor);
 }
 
 #chessCAMO a:active {
-  color: white;
+  color: var(--textColor);
 }
 
 #chessCAMO ul {
   padding: 0 5%;
-  color: white;
+  color: var(--textColor);
   font-size: 1.1rem;
+  list-style: square;
 }
 
 #chessCAMO li {
-  padding: 0;
+  padding: 5px 0px;
   width: 100%;
 }
 
@@ -181,21 +206,22 @@ button:active {
 }
 
 form {
-  width: 90%;
+  width: var(--contentWidth);
   margin: auto;
   padding: 5px;
-  border: 2px dotted white;
-  color: white;
+  border: 2px dotted var(--borderColor);
+  color: var(--textColor);
 }
 
 form h1 {
-  color: var(--headingColor);
+  color: var(--h1Color);
   text-align: center;
 }
 
 form p {
   margin: 5px 0px;
   font-weight: bolder;
+  color: var(--formColor);
 }
 
 form input {
@@ -205,14 +231,16 @@ form input {
 }
 
 form input:focus {
-  background: rgba(255, 255, 0, 0.8);
+  background: var(--focusColor);
 }
 
 form input:required {
-  border: 1px solid red;
+  border: 1px solid var(--requiredColor);
 }
 
 form textarea {
+  min-width: 50%;
+  min-height: 10vh;
   max-width: 100%;
   max-height: 50vh;
   width: 100%;
@@ -220,10 +248,10 @@ form textarea {
 
 footer {
   text-align: center;
-  color: white;
+  color: var(--textColor);
   position: relative;
   margin: auto;
-  width: var(--spacingWidth);
+  width: var(--contentWidth);
   padding: 10px;
 }
 
@@ -244,55 +272,357 @@ footer div {
   color: white;
 }
 
-/* @media screen and (min-width: 600px) {
+/* Medium Devices (Landscape) */
+@media screen and (min-width: 768px) {
+  section h1 {
+    font-size: 2.75rem;
+  }
+
+  section img {
+    width: 27.5%;
+    margin: auto 5% auto auto;
+  }
+
   .banner-img {
     height: 100vh;
-    background-position: center;
   }
 
-  .banner-text {
-    width: 100%;
-    font-size: 2rem;
-  }
-
-  .about {
-    position: relative;
-  }
-
-  .portrait-img {
-    width: 10%;
-    float: right;
-    position: absolute;
-    top: 0;
-    right: 5%;
+  .banner-img div {
+    font-size: 2.5rem;
   }
 
   .about-text {
-    padding: 10px 10px 0px 0px;
-    width: 80%;
-    margin: 10px 2%;
-    font-size: 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto auto auto 5%;
+    padding: 0;
+    width: 60%;
+    font-size: 1.5rem;
   }
 
-  #chessCAMO {
-    position: relative;
+  #chessCAMO h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Large Devices */
+@media screen and (min-width: 992px) {
+  section h1 {
+    font-size: 2.75rem;
+  }
+
+  section img {
+    width: 27.5%;
+    margin: auto 5% auto auto;
+  }
+
+  .banner-img {
+    height: 100vh;
+  }
+
+  .banner-img div {
+    font-size: 2.5rem;
+  }
+
+  .about-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto auto auto 5%;
+    padding: 0;
+    width: 60%;
+    font-size: 1.9rem;
+  }
+
+  #chessCAMO h2 {
+    font-size: 2rem;
   }
 
   #chessCAMO img {
+    margin: 0 auto 0 0%;
     width: 50%;
-    display: block;
-    margin: 0 2%;
-    padding: 10px;
   }
 
-  .description-details {
+  .chessCAMO-details {
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: -20px;
+    left: 52.5%;
+  }
+
+  #chessCAMO h3 {
+    font-size: 1.75rem;
+    padding: 20px 0 10px 0;
+  }
+
+  #chessCAMO p {
+    font-size: 1.1rem;
+  }
+
+  #chessCAMO ul {
+    font-size: 1rem;
+  }
+
+  #chessCAMO li {
+    padding: 2.5px;
   }
 
   #chessCAMO button {
-    top: 70%;
-    left: 70%;
+    margin: 10px auto;
+    display: block;
   }
-} */
+}
+
+/* Extra large devices */
+@media screen and (min-width: 1200px) {
+  section h1 {
+    font-size: 3rem;
+  }
+
+  section img {
+    width: 30%;
+    margin: auto 5% auto auto;
+  }
+
+  .banner-img {
+    height: 100vh;
+  }
+
+  .banner-img div {
+    font-size: 2.5rem;
+  }
+
+  .about-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto auto auto 5%;
+    padding: 0;
+    width: 55%;
+    font-size: 2.25rem;
+  }
+
+  #chessCAMO h2 {
+    font-size: 2rem;
+  }
+
+  #chessCAMO img {
+    margin: 0 auto 0 0%;
+    width: 50%;
+  }
+
+  .chessCAMO-details {
+    position: absolute;
+    top: -20px;
+    left: 55%;
+  }
+
+  #chessCAMO h3 {
+    font-size: 2rem;
+    padding: 20px 0 10px 0;
+  }
+
+  #chessCAMO p {
+    font-size: 1.3rem;
+  }
+
+  #chessCAMO ul {
+    font-size: 1.2rem;
+  }
+
+  #chessCAMO li {
+    padding: 5px;
+  }
+
+  #chessCAMO button {
+    margin: 10px auto;
+    display: block;
+  }
+
+  form {
+    width: 75vw;
+  }
+
+  form p {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  form input {
+    padding: 10px;
+    font-size: 1.15rem;
+  }
+
+  form textarea {
+    min-height: 25vh;
+  }
+}
+
+/* Extra large devices (Large Monitors) */
+@media screen and (min-width: 1500px) {
+  section h1 {
+    font-size: 3rem;
+  }
+
+  section img {
+    width: 25%;
+    margin: auto 5% auto auto;
+  }
+
+  .banner-img {
+    height: 100vh;
+  }
+
+  .banner-img div {
+    font-size: 2.5rem;
+  }
+
+  .about-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto auto auto 5%;
+    padding: 0;
+    width: 57.5%;
+    font-size: 2.6rem;
+  }
+
+  #chessCAMO h2 {
+    font-size: 2.25rem;
+  }
+
+  #chessCAMO img {
+    margin: 0 auto 0 0%;
+    width: 50%;
+  }
+
+  .chessCAMO-details {
+    position: absolute;
+    top: -20px;
+    left: 55%;
+  }
+
+  #chessCAMO h3 {
+    font-size: 2rem;
+    padding: 20px 0 10px 0;
+  }
+
+  #chessCAMO p {
+    font-size: 1.8rem;
+  }
+
+  #chessCAMO ul {
+    font-size: 1.3rem;
+  }
+
+  #chessCAMO li {
+    padding: 5px;
+  }
+
+  #chessCAMO button {
+    margin: 10px auto;
+    display: block;
+  }
+
+  form {
+    width: 50vw;
+  }
+
+  form p {
+    font-size: 1.3rem;
+  }
+
+  form input {
+    padding: 10px;
+    font-size: 1.15rem;
+  }
+
+  form textarea {
+    min-height: 25vh;
+  }
+}
+
+/* Ultra large devices */
+@media screen and (min-width: 1800px) {
+  section h1 {
+    font-size: 4rem;
+  }
+
+  section img {
+    width: 17.5%;
+    margin: auto 5% auto auto;
+  }
+
+  .banner-img {
+    height: 100vh;
+  }
+
+  .banner-img div {
+    font-size: 2.5rem;
+  }
+
+  .about-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto auto auto 5%;
+    padding: 0;
+    width: 65%;
+    font-size: 2.85rem;
+  }
+
+  #chessCAMO h2 {
+    font-size: 2.25rem;
+    text-align: left;
+  }
+
+  #chessCAMO img {
+    margin: 0 auto 0 0%;
+    width: 35%;
+  }
+
+  .chessCAMO-details {
+    position: absolute;
+    top: -20px;
+    left: 40%;
+  }
+
+  #chessCAMO h3 {
+    font-size: 2rem;
+    padding: 20px 0 10px 0;
+  }
+
+  #chessCAMO p {
+    font-size: 1.8rem;
+  }
+
+  #chessCAMO ul {
+    font-size: 1.4rem;
+  }
+
+  #chessCAMO li {
+    padding: 5px;
+  }
+
+  #chessCAMO button {
+    margin: 10px auto;
+    display: block;
+  }
+
+  form {
+    width: 50vw;
+  }
+
+  form p {
+    font-size: 1.5rem;
+  }
+
+  form input {
+    padding: 10px;
+    font-size: 1.25rem;
+  }
+
+  form textarea {
+    min-height: 25vh;
+  }
+}

@@ -37,20 +37,22 @@
     <!-- A little introduction about myself -->
     <section>
       <h1>Who Am I?</h1>
-      <img
-        src="./images/portrait.jpeg"
-        alt="Portrait image - me playing chess in nature"
-      />
-      <p class="about-text">
-        I was a MASc research student at Simon Fraser University’s Multimedia
-        Laboratory until my recent graduation in April 2020. I recieved BASc
-        (<em>Honours with Distinction</em>) in Electronics Engineering from
-        Simon Fraser University in 2018. During this time, I worked on a variety
-        of machine learning projects and enhanced my coding skills both in a
-        team and individual setting. I <em> love </em> learning new things and
-        constantly apply my knowledge to unique problems in order to solve and
-        overcome obstacles that seemed insurmountable at first.
-      </p>
+      <div>
+        <img
+          src="./images/portrait.jpeg"
+          alt="Portrait image - me playing chess in nature"
+        />
+        <p class="about-text">
+          I was a MASc research student at Simon Fraser University’s Multimedia
+          Laboratory until my recent graduation in April 2020. I recieved BASc
+          (<em>Honours with Distinction</em>) in Electronics Engineering from
+          Simon Fraser University in 2018. During this time, I worked on a
+          variety of machine learning projects and enhanced my coding skills
+          both in a team and individual setting. I <em> love </em> learning new
+          things and constantly apply my knowledge to unique problems in order
+          to solve and overcome obstacles that seemed insurmountable at first.
+        </p>
+      </div>
     </section>
 
     <!-- Here I discuss projects, both on going and completed -->
@@ -58,38 +60,40 @@
       <h1>Projects</h1>
       <div id="chessCAMO">
         <h2>chessCAMO</h2>
-        <img
-          src="./images/gui.gif"
-          alt="Graphical User Interface illustration for the final product"
-        />
-        <div>
-          <h3>Description:</h3>
-          <p>
-            chessCAMO is a newly proposed chess engine with a built-in variant
-            that stands for <strong>C</strong>alculations
-            <strong>A</strong>lways <strong>M</strong>ake
-            <strong>O</strong>pportunities and was inspired by the very popular
-            chess variant
-            <a href="https://en.wikipedia.org/wiki/Crazyhouse">Crazyhouse</a>.
-            The "CAMO" portion comes from the idea that in this variant, at any
-            turn, a player can sacrifice making a move to replace one of their
-            pieces with a piece from the "piece reservoir". This has the affect
-            of camouflaging each piece that is currently on the board.
-          </p>
+        <div class="chessCAMO-container">
+          <img
+            src="./images/gui.gif"
+            alt="Graphical User Interface illustration for the final product"
+          />
+          <div class="chessCAMO-details">
+            <h3>Description:</h3>
+            <p>
+              chessCAMO is a newly proposed chess engine with a built-in variant
+              that stands for <strong>C</strong>alculations
+              <strong>A</strong>lways <strong>M</strong>ake
+              <strong>O</strong>pportunities and was inspired by the very
+              popular chess variant
+              <a href="https://en.wikipedia.org/wiki/Crazyhouse">Crazyhouse</a>.
+              The "CAMO" portion comes from the idea that in this variant, at
+              any turn, a player can sacrifice making a move to replace one of
+              their pieces with a piece from the "piece reservoir". This has the
+              affect of camouflaging each piece that is currently on the board.
+            </p>
 
-          <h3>Implementation Details:</h3>
-          <ul>
-            <li>C++, Makefile, YAML</li>
-            <li>Markdown, Doxygen &rightarrow; Documentation</li>
-            <li>Git &rightarrow; Version Control</li>
-            <li>GTest &rightarrow; Unit Testing</li>
-            <li>Continuous Integration &rightarrow; GitHub Actions</li>
-            <li>SFML &rightarrow; Graphical User Interface</li>
-          </ul>
+            <h3>Implementation Details:</h3>
+            <ul>
+              <li>C++, Makefile, YAML</li>
+              <li>Markdown, Doxygen &rightarrow; Documentation</li>
+              <li>Git &rightarrow; Version Control</li>
+              <li>GTest &rightarrow; Unit Testing</li>
+              <li>Continuous Integration &rightarrow; GitHub Actions</li>
+              <li>SFML &rightarrow; Graphical User Interface</li>
+            </ul>
+            <a href="https://github.com/lbragile/chessCAMO">
+              <button type="button">GitHub</button>
+            </a>
+          </div>
         </div>
-        <a href="https://github.com/lbragile/chessCAMO">
-          <button type="button">GitHub</button>
-        </a>
       </div>
     </section>
 
