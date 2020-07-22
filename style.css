@@ -5,7 +5,7 @@
 }
 
 :root {
-  --backgroundColor: #333;
+  --backgroundColor: rgba(50, 50, 50, 1);
   --oddBackgroundColor: rgba(113, 128, 147, 1);
   --h1Color: rgba(237, 251, 49, 1);
   --h2Color: rgba(236, 248, 182, 1);
@@ -43,6 +43,12 @@ footer {
 section {
   width: 100%;
   padding-bottom: 10px;
+}
+
+/* section child that is not h1 
+will appear when section becomes visible */
+section :not(h1) {
+  display: none;
 }
 
 section h1 {
@@ -93,7 +99,9 @@ button:active {
   top: 1px;
 }
 
-.fa-bars {
+.fa-bars,
+.fa-times,
+nav ul {
   color: var(--menuColor);
   font-size: 1.5em;
   border: 3px solid var(--menuColor);
@@ -110,22 +118,22 @@ button:active {
   cursor: pointer;
 }
 
+.fa-times {
+  visibility: hidden;
+  border: none;
+  font-size: 1.3em;
+}
+
 nav ul {
-  color: var(--menuColor);
   background: black;
   opacity: 0.9;
-  border: 3px solid var(--menuColor);
   padding: 20px;
   border-radius: 5%;
 
   color: white;
   list-style: none;
-  font-size: 1.5em;
   font-weight: bold;
 
-  text-align: center;
-
-  position: fixed;
   top: 5px;
   right: 5px;
 
@@ -238,7 +246,6 @@ form {
   width: var(--contentWidth);
   margin: auto;
   padding: 10px;
-  /* border: 2px dotted var(--borderColor); */
   color: var(--textColor);
   background: var(--backgroundColor);
   border-radius: 2%;
@@ -365,7 +372,7 @@ footer div {
     margin: auto auto auto 5%;
     padding: 0;
     width: 60%;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   #chessCAMO h2 {
