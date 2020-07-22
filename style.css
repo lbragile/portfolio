@@ -6,10 +6,11 @@
 
 :root {
   --backgroundColor: #333;
-  --h1Color: rgba(251, 197, 49, 1);
-  --h2Color: rgba(232, 65, 24, 1);
-  --h3Color: rgba(68, 189, 50, 1);
-  --linkColor: rgba(0, 168, 255, 1);
+  --oddBackgroundColor: rgba(113, 128, 147, 1);
+  --h1Color: rgba(237, 251, 49, 1);
+  --h2Color: rgba(236, 248, 182, 1);
+  --h3Color: rgba(94, 255, 88, 1);
+  --linkColor: rgb(0, 255, 255, 1);
 
   --buttonColorTop: #54a0ff;
   --buttonColorBottom: #2e86de;
@@ -41,7 +42,7 @@ footer {
 
 section {
   width: 100%;
-  margin: 10px auto;
+  padding-bottom: 10px;
 }
 
 section h1 {
@@ -54,10 +55,14 @@ section h1 {
 /* My portrait photo */
 section img {
   width: 75%;
-  border-radius: 20%;
+  border-radius: 10%;
   border: 3px solid var(--borderColor);
   display: block;
   margin: auto;
+}
+
+section:nth-child(odd) {
+  background: var(--oddBackgroundColor);
 }
 
 button {
@@ -102,6 +107,7 @@ button:active {
   right: 10px;
 
   z-index: 2;
+  cursor: pointer;
 }
 
 nav ul {
@@ -124,6 +130,7 @@ nav ul {
   right: 5px;
 
   z-index: 1;
+  display: none;
 }
 
 nav li {
@@ -138,7 +145,7 @@ nav li:hover {
 .banner-img {
   background: var(--backgroundImage);
   background-repeat: no-repeat;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
   background-size: cover;
   background-position: top;
@@ -147,20 +154,19 @@ nav li:hover {
   align-items: center;
 }
 
-.banner-img div {
+.banner-text {
   width: 100%;
   color: white;
   background: black;
   opacity: 0.8;
   text-align: center;
-  /* padding: 5px; */
   text-transform: capitalize;
   display: block;
   font-size: 1.5rem;
+  display: none; /* fadeIn with jQuery*/
 }
 
 .about-text {
-  /* text-align: left; */
   padding: 10px 0px;
   margin: 0 auto;
   text-align: justify;
@@ -224,7 +230,7 @@ nav li:hover {
 }
 
 #chessCAMO button {
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
   display: block;
 }
 
@@ -232,8 +238,10 @@ form {
   width: var(--contentWidth);
   margin: auto;
   padding: 10px;
-  border: 2px dotted var(--borderColor);
+  /* border: 2px dotted var(--borderColor); */
   color: var(--textColor);
+  background: var(--backgroundColor);
+  border-radius: 2%;
 }
 
 form h1 {
@@ -274,11 +282,30 @@ form textarea {
 }
 
 .form-buttons {
-  margin: 10px auto 0 auto;
+  margin-top: 10px;
 }
 
-.form-buttons:focus {
+.form-buttons input:focus {
   background: var(--formColor);
+}
+
+.form-buttons input {
+  width: 45%;
+  color: black;
+  font-weight: bolder;
+  margin: auto 2.5%;
+  font-size: 1rem;
+}
+
+#clear {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: lightcoral;
+}
+
+#send {
+  background: lightgreen;
 }
 
 footer {
@@ -327,7 +354,7 @@ footer div {
     height: 100vh;
   }
 
-  .banner-img div {
+  .banner-text {
     font-size: 2.5rem;
   }
 
@@ -365,7 +392,7 @@ footer div {
     height: 100vh;
   }
 
-  .banner-img div {
+  .banner-text {
     font-size: 2.5rem;
   }
 
@@ -375,8 +402,8 @@ footer div {
     left: 0;
     margin: auto auto auto 5%;
     padding: 0;
-    width: 60%;
-    font-size: 1.9rem;
+    width: 57.5%;
+    font-size: 1.7rem;
   }
 
   #chessCAMO h2 {
@@ -411,11 +438,6 @@ footer div {
     padding: 2.5px;
   }
 
-  #chessCAMO button {
-    margin: 10px auto;
-    display: block;
-  }
-
   form textarea {
     font-size: 1.1rem;
   }
@@ -436,7 +458,7 @@ footer div {
     height: 100vh;
   }
 
-  .banner-img div {
+  .banner-text {
     font-size: 2.5rem;
   }
 
@@ -446,8 +468,8 @@ footer div {
     left: 0;
     margin: auto auto auto 5%;
     padding: 0;
-    width: 55%;
-    font-size: 2.25rem;
+    width: 51%;
+    font-size: 2.05rem;
   }
 
   #chessCAMO h2 {
@@ -482,11 +504,6 @@ footer div {
     padding: 5px;
   }
 
-  #chessCAMO button {
-    margin: 10px auto;
-    display: block;
-  }
-
   form {
     width: 75vw;
   }
@@ -514,7 +531,7 @@ footer div {
   }
 
   section img {
-    width: 25%;
+    width: 22.5%;
     margin: auto 5% auto auto;
   }
 
@@ -522,7 +539,7 @@ footer div {
     height: 100vh;
   }
 
-  .banner-img div {
+  .banner-text {
     font-size: 2.5rem;
   }
 
@@ -532,8 +549,8 @@ footer div {
     left: 0;
     margin: auto auto auto 5%;
     padding: 0;
-    width: 57.5%;
-    font-size: 2.6rem;
+    width: 60%;
+    font-size: 2.3rem;
   }
 
   #chessCAMO h2 {
@@ -568,11 +585,6 @@ footer div {
     padding: 5px;
   }
 
-  #chessCAMO button {
-    margin: 10px auto;
-    display: block;
-  }
-
   form {
     width: 50vw;
   }
@@ -599,7 +611,7 @@ footer div {
   }
 
   section img {
-    width: 17.5%;
+    width: 15%;
     margin: auto 5% auto auto;
   }
 
@@ -607,7 +619,7 @@ footer div {
     height: 100vh;
   }
 
-  .banner-img div {
+  .banner-text {
     font-size: 2.5rem;
   }
 
@@ -617,8 +629,8 @@ footer div {
     left: 0;
     margin: auto auto auto 5%;
     padding: 0;
-    width: 65%;
-    font-size: 2.85rem;
+    width: 70%;
+    font-size: 2.5rem;
   }
 
   #chessCAMO h2 {
@@ -652,11 +664,6 @@ footer div {
 
   #chessCAMO li {
     padding: 5px;
-  }
-
-  #chessCAMO button {
-    margin: 10px auto;
-    display: block;
   }
 
   form {
