@@ -92,3 +92,29 @@ up_arrow.on("mouseleave", function () {
 up_arrow.on("click", function () {
   banner_image.scrollToThis(regular_speed);
 });
+
+function submitForm() {
+  var first_name = $('input[name="first_name"]').val();
+  var last_name = $('input[name="last_name"]').val();
+  var subject = $('input[name="subject"]').val();
+
+  var phone_number = $('input[name="phone_number"]').val();
+  var message = $('textarea[name="message"]').val();
+
+  var newline = "%0D%0A";
+
+  window.location.href =
+    "mailto:lbragile.masc@gmail.com?subject=" +
+    subject +
+    "&body=" +
+    message +
+    newline +
+    newline +
+    "Name: " +
+    first_name +
+    " " +
+    last_name +
+    newline +
+    "Phone Number: " +
+    phone_number;
+}
