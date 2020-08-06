@@ -23,7 +23,7 @@
   --focusColor: yellow;
   --requiredColor: #ee5253;
 
-  --fontFamily: "Times New Roman", Times, serif;
+  --fontFamily: Arial, Helvetica, sans-serif;
   --backgroundImage: url("./images/banner.png");
   --contentWidth: 90%;
 }
@@ -58,17 +58,13 @@ section h1 {
   padding: 20px 10px;
 }
 
-/* My portrait photo */
-section img {
-  width: 75%;
-  border-radius: 10%;
-  border: 3px solid var(--borderColor);
-  display: block;
-  margin: auto;
-}
-
 section:nth-child(odd) {
   background: var(--oddBackgroundColor);
+}
+
+.link-buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 button {
@@ -83,7 +79,7 @@ button {
   cursor: pointer;
   color: var(--textColor);
   padding: 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -174,6 +170,15 @@ nav li:hover {
   display: none; /* fadeIn with jQuery*/
 }
 
+/* My portrait photo */
+.about img {
+  width: 60%;
+  border-radius: 10%;
+  border: 3px solid var(--borderColor);
+  position: relative;
+  left: 20%;
+}
+
 .about-text {
   padding: 10px 0px;
   margin: 0 auto;
@@ -183,63 +188,72 @@ nav li:hover {
   font-size: 1.2rem;
 }
 
-#chessCAMO {
-  margin: 10px 5%;
+.projects {
+  margin: 0 5%;
   font-weight: lighter;
   text-align: justify;
+  width: 90%;
 }
 
-#chessCAMO h2 {
+.projects h2 {
   text-decoration: underline;
   color: var(--h2Color);
   font-size: 1.75rem;
-  padding: 0 0 15px 0;
   text-align: center;
+  padding: 20px;
 }
 
-#chessCAMO img {
-  /* border: none; */
+#chessCAMO-heading {
+  padding-top: 0;
+}
+
+.projects img {
   border-radius: 0;
-  margin: 0 auto;
   width: 100%;
 }
 
-#chessCAMO h3 {
+.projects h3 {
   font-size: 1.5rem;
   padding: 10px 0;
   color: var(--h3Color);
 }
 
-#chessCAMO p {
+.projects p {
   width: 100%;
   color: var(--textColor);
   font-size: 1.2rem;
 }
 
-#chessCAMO a {
+.projects a {
   text-decoration: none;
   color: var(--linkColor);
 }
 
-#chessCAMO a:active {
+.projects a:active {
   color: var(--textColor);
 }
 
-#chessCAMO ul {
-  padding: 0 5%;
+.projects ul {
+  padding: 0 0 0 5%;
   color: var(--textColor);
   font-size: 1.1rem;
   list-style: square;
+  text-align: left;
 }
 
-#chessCAMO li {
+.projects li {
   padding: 5px 0px;
   width: 100%;
+  margin: 0;
 }
 
-#chessCAMO button {
-  margin: 10px auto 0 auto;
-  display: block;
+.projects button {
+  margin: 5px;
+}
+
+/* backup incase of text overflow */
+.project-desc {
+  overflow: auto;
 }
 
 form {
@@ -346,19 +360,28 @@ footer div {
   color: yellow;
 }
 
+/* Small devices (portrait tablets and large phones */
+@media screen and (min-width: 600px) {
+  .about img {
+    width: 40%;
+    left: 30%;
+  }
+}
+
 /* Medium Devices (Landscape) */
 @media screen and (min-width: 768px) {
   section h1 {
     font-size: 2.75rem;
   }
 
-  section img {
-    width: 27.5%;
-    margin: auto 5% auto auto;
-  }
-
   .banner-text {
     font-size: 2.5rem;
+  }
+
+  .about img {
+    width: 27.5%;
+    position: relative;
+    left: 67.5%;
   }
 
   .about-text {
@@ -368,10 +391,10 @@ footer div {
     margin: auto auto auto 5%;
     padding: 0;
     width: 60%;
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
-  #chessCAMO h2 {
+  .projects h2 {
     font-size: 2rem;
   }
 
@@ -382,42 +405,50 @@ footer div {
 
 /* Large Devices */
 @media screen and (min-width: 992px) {
-  #chessCAMO button {
-    margin: 10px 0;
-    font-size: 1.2rem;
-  }
-
   .about-text {
     width: 57.5%;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
-  #chessCAMO img {
+  .projects img {
     margin: 0 auto 0 0;
     width: 50%;
   }
 
-  .chessCAMO-details {
+  .projects h3 {
+    font-size: 1.75rem;
+    padding: 20px 0 10px 0;
+  }
+
+  .projects p {
+    font-size: 1rem;
+  }
+
+  .projects ul {
+    font-size: 1rem;
+  }
+
+  .projects li {
+    padding: 2.5px;
+  }
+
+  .projects button {
+    margin: 20px 10px 0 0;
+    font-size: 1rem;
+  }
+
+  .project-details {
     position: absolute;
     top: -20px;
     left: 52.5%;
   }
 
-  #chessCAMO h3 {
-    font-size: 1.75rem;
-    padding: 20px 0 10px 0;
+  #covid-image {
+    margin: 50px 0;
   }
 
-  #chessCAMO p {
-    font-size: 1.1rem;
-  }
-
-  #chessCAMO ul {
-    font-size: 1rem;
-  }
-
-  #chessCAMO li {
-    padding: 2.5px;
+  form {
+    width: 60%;
   }
 }
 
@@ -432,32 +463,33 @@ footer div {
   }
 
   .about-text {
-    width: 51%;
-    font-size: 2.05rem;
+    width: 55%;
+    font-size: 1.9rem;
   }
 
-  .chessCAMO-details {
-    left: 55%;
-  }
-
-  #chessCAMO h3 {
+  .projects h3 {
     font-size: 2rem;
   }
 
-  #chessCAMO p {
-    font-size: 1.3rem;
+  .projects p {
+    font-size: 1.1rem;
   }
 
-  #chessCAMO ul {
+  .projects ul {
     font-size: 1.2rem;
   }
 
-  #chessCAMO li {
+  .projects li {
     padding: 5px;
   }
 
-  form {
-    width: 75%;
+  .projects button {
+    font-size: 1.1rem;
+  }
+
+  .project-details {
+    top: -20px;
+    left: 55%;
   }
 
   form p {
@@ -482,33 +514,39 @@ footer div {
     width: 22.5%;
   }
 
-  .about-text {
-    width: 60%;
-    font-size: 2.3rem;
+  .about img {
+    width: 20%;
+    top: -15px;
+    left: 75%;
   }
 
-  #chessCAMO h2 {
+  .about-text {
+    width: 65%;
+    font-size: 2.275rem;
+  }
+
+  .projects h2 {
     font-size: 2.25rem;
   }
 
-  #chessCAMO img {
+  .projects img {
     width: 50%;
   }
 
-  .chessCAMO-details {
-    left: 55%;
+  .projects p {
+    font-size: 1.6rem;
   }
 
-  #chessCAMO p {
-    font-size: 1.8rem;
-  }
-
-  #chessCAMO ul {
+  .projects ul {
     font-size: 1.3rem;
   }
 
-  #chessCAMO li {
+  .projects li {
     padding: 5px;
+  }
+
+  #covid-image {
+    margin: 60px 0;
   }
 
   form {
@@ -526,25 +564,41 @@ footer div {
     width: 15%;
   }
 
-  .about-text {
-    width: 70%;
-    font-size: 2.5rem;
+  .about img {
+    width: 15%;
+    left: 80%;
+    top: 0;
   }
 
-  #chessCAMO h2 {
+  .about-text {
+    width: 70%;
+    font-size: 2.4rem;
+  }
+
+  .projects h2 {
     font-size: 2.25rem;
   }
 
-  #chessCAMO img {
-    width: 35%;
+  .projects p {
+    font-size: 1.6rem;
   }
 
-  .chessCAMO-details {
+  .projects img {
+    border-radius: 0;
+    width: 35%;
+    vertical-align: middle;
+  }
+
+  .projects ul {
+    font-size: 1.4rem;
+  }
+
+  .project-details {
     left: 40%;
   }
 
-  #chessCAMO ul {
-    font-size: 1.4rem;
+  #covid-image {
+    margin: 35px 0;
   }
 
   form {

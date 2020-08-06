@@ -68,42 +68,81 @@
     <!-- Here I discuss projects, both on going and completed -->
     <section class="projects">
       <h1>Projects</h1>
-      <div id="chessCAMO">
-        <h2>chessCAMO</h2>
-        <div class="chessCAMO-container">
+
+      <h2 id="chessCAMO-heading">chessCAMO</h2>
+      <div class="project-desc">
+        <div class="project-image">
           <img
-            id="chessCAMO-image"
             src="./images/gui.gif"
             alt="Graphical User Interface illustration for the final product"
           />
-          <div class="chessCAMO-details">
-            <h3>Description:</h3>
-            <p id="chessCAMO-description">
-              chessCAMO is a newly proposed chess engine with a built-in variant
-              that stands for <strong>C</strong>alculations
-              <strong>A</strong>lways <strong>M</strong>ake
-              <strong>O</strong>pportunities and was inspired by the very
-              popular chess variant
-              <a href="https://en.wikipedia.org/wiki/Crazyhouse">Crazyhouse</a>.
-              The "CAMO" portion comes from the idea that in this variant, at
-              any turn, a player can sacrifice making a move to replace one of
-              their pieces with a piece from the "piece reservoir". This has the
-              affect of camouflaging each piece that is currently on the board.
-            </p>
+        </div>
+        <div class="project-details">
+          <h3>Description:</h3>
+          <p>
+            chessCAMO is a newly proposed chess engine with a built-in variant
+            that stands for <strong>C</strong>alculations
+            <strong>A</strong>lways <strong>M</strong>ake
+            <strong>O</strong>pportunities and was inspired by the very popular
+            chess variant
+            <a href="https://en.wikipedia.org/wiki/Crazyhouse">Crazyhouse</a>.
+            The "CAMO" portion comes from the idea that in this variant, at any
+            turn, a player can sacrifice making a move to replace one of their
+            pieces with a piece from the "piece reservoir". This has the affect
+            of camouflaging each piece that is currently on the board.
+          </p>
 
-            <h3>Implementation Details:</h3>
-            <ul id="chessCAMO-details">
-              <li>C++, Makefile, YAML</li>
-              <li>Markdown, Doxygen &rightarrow; Documentation</li>
-              <li>Git &rightarrow; Version Control</li>
-              <li>GTest &rightarrow; Unit Testing</li>
-              <li>Continuous Integration &rightarrow; GitHub Actions</li>
-              <li>SFML &rightarrow; Graphical User Interface</li>
-            </ul>
+          <h3>Implementation Details:</h3>
+          <ul>
+            <li>C++, Makefile, YAML</li>
+            <li>Markdown, Doxygen &rightarrow; Documentation</li>
+            <li>Git &rightarrow; Version Control</li>
+            <li>GTest &rightarrow; Unit Testing</li>
+            <li>Continuous Integration &rightarrow; GitHub Actions</li>
+            <li>SFML &rightarrow; Graphical User Interface</li>
+          </ul>
+
+          <div class="link-buttons">
             <a href="https://github.com/lbragile/chessCAMO">
               <button type="button">GitHub</button>
             </a>
+            <a href="https://lbragile.github.io/chessCAMO/">
+              <button type="button">Documentation</button>
+            </a>
           </div>
+        </div>
+      </div>
+
+      <h2>COVID19 Statistics</h2>
+      <div class="project-desc">
+        <div class="project-image" id="covid-image">
+          <img
+            src="./images/demo.gif"
+            alt="Illustration of how to use the covid19 statistics site"
+          />
+        </div>
+        <div class="project-details">
+          <h3>Description:</h3>
+          <p>
+            This is an interactive map with worldwide COVID-19 global statistics
+            updated at regular intervals using upto date dataset API calls. Main
+            features include, global statistics, country hover analysis,
+            continent selection, on-click graphs, and detailed tables. The core
+            principle of the simpleglobalstats brand is
+            <em>simplicity</em>, which is why it is kept simple and elegant to
+            allow the user to have all the necessary information at their finger
+            tips.
+          </p>
+
+          <h3>Implementation Details:</h3>
+          <ul>
+            <li>HTML5, CSS3, Javascript (jQuery)</li>
+            <li>AJAX &rightarrow; API Communication</li>
+            <li>Git &rightarrow; Version Control</li>
+          </ul>
+          <a href="https://www.simpleglobalstats.com/">
+            <button type="button">Visit Site</button>
+          </a>
         </div>
       </div>
     </section>
