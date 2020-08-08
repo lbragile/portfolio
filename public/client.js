@@ -93,28 +93,47 @@ up_arrow.on("click", function () {
   banner_image.scrollToThis(regular_speed);
 });
 
-function submitForm() {
-  var first_name = $('input[name="first_name"]').val();
-  var last_name = $('input[name="last_name"]').val();
-  var subject = $('input[name="subject"]').val();
+$.fn.serializeObject = function () {
+  var o = {};
+  var a = this.serializeArray();
+  $.each(a, function () {
+    if (o[this.name]) {
+      if (!o[this.name].push) {
+        o[this.name] = [o[this.name]];
+      }
+      o[this.name].push(this.value || "");
+    } else {
+      o[this.name] = this.value || "";
+    }
+  });
+  return o;
+};
 
-  var phone_number = $('input[name="phone_number"]').val();
-  var message = $('textarea[name="message"]').val();
+$("form").on("submit", (e) => {
+  e.preventDefault();
+  $("#send").val("Sending...");
 
-  var newline = "%0D%0A";
+  var form_data = $("form").serializeObject();
 
-  window.location.href =
-    "mailto:lbragile.masc@gmail.com?subject=" +
-    subject +
-    "&body=" +
-    message +
-    newline +
-    newline +
-    "Name: " +
-    first_name +
-    " " +
-    last_name +
-    newline +
-    "Phone Number: " +
-    phone_number;
-}
+  var options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form_data),
+  };
+
+  fetch("/", options)
+    .then((response) => response.json())
+    .then((output) => {
+      if (output.status == "success") {
+        $("#send").val("Sent!");
+        document.querySelector("form").reset();
+        setTimeout(function () {
+          $("#send").val("Send Message");
+        }, 5000);
+      } else {
+        $("#send").val("Error!");
+      }
+    });
+});
