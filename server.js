@@ -34,6 +34,8 @@ app.post("/", function (req, res) {
       req.body.first_name +
       " " +
       req.body.last_name +
+      "\r\n Email: " +
+      req.body.email +
       "\r\n Phone: " +
       req.body.phone_number,
   };
