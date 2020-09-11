@@ -5,7 +5,7 @@ const $ = require("jquery")(window);
 const express = require("express");
 const app = express();
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`listening on port: ${port}`));
 
 app.use(express.static("public"));

@@ -1,14 +1,13 @@
+import $ from "jquery";
+
 var nav_menu = $(".fa-bars"); // hamburger menu
 var nav_exit = $(".fa-times"); // 'x' mark to exit menu
 var nav_options = nav_exit.next();
 var up_arrow = $(".fa-arrow-up").next();
 var banner_image = $(".banner-img");
 var banner_text = $(".banner-text");
-var text_area = $("textarea");
 
 var main_sections = [".about", ".projects", ".contact"];
-
-const nav_menu_border = nav_menu.css("border");
 
 var regular_speed = 2000; // 2 seconds
 
