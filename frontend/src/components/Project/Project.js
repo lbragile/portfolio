@@ -38,37 +38,34 @@ export default function Project(props) {
 
   return (
     <>
-      <section className="projects">
-        <div className="container">
-          <h2
-            className="display-4 font-weight-bolder pt-3 text-center"
-            id={props.name + "-heading"}
-          >
-            {props.name}
-          </h2>
-          <table className="about-container table table-borderless table-responsive">
-            <tbody>
-              <tr>
-                <td className="align-middle">
-                  <img className="mr-4" src={props.src} alt={props.alt} />
-                </td>
-                <td className="align-middle text-justify">
-                  <div className="desc">
-                    <h3>Description:</h3>
-                    <p>{props.description}</p>
-                  </div>
-                  <div className="impl">
-                    <h3>Implementation Details:</h3>
-                    {props.implementation}
-                  </div>
+      <div className="container text-white">
+        <h2
+          className="display-5 my-3 font-weight-bolder pt-3 text-center"
+          id={props.name + "-heading"}
+        >
+          {props.name}
+        </h2>
 
-                  <div className="link-buttons">{ButtonType()}</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <hr></hr>
+
+        <div className="row text-center align-items-center">
+          <div className="col-sm">
+            <img className="mr-4" src={props.src} alt={props.alt} />
+          </div>
+          <div className="col-sm">
+            <div className="desc pt-2 text-center">
+              <h3>Description:</h3>
+              <p className="text-justify">{props.description}</p>
+            </div>
+            <div className="impl text-center">
+              <h3>Implementation Details:</h3>
+              <div className="text-justify">{props.implementation}</div>
+            </div>
+
+            <div className="link-buttons pb-3">{ButtonType()}</div>
+          </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

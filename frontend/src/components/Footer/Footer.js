@@ -1,7 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FaArrowUp, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import "./Footer.css";
 
 export default function Footer() {
@@ -12,26 +10,29 @@ export default function Footer() {
   return (
     <>
       <section className="footer">
-        <div className="container text-center">
-          <div className="social-icons">
+        <div className="container text-center py-2">
+          <div>
             <a href="https://github.com/lbragile/">
-              <FontAwesomeIcon icon={faGithubSquare} size="3x" color="grey" />
+              <FaGithubSquare size="3rem" color="rgb(209, 209, 209)" />
             </a>
             <a
               href="https://www.linkedin.com/in/liorbragilevsky/"
               className="ml-1"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="3x" />
+              <FaLinkedin size="3rem" color="rgb(125, 170, 255)" />
             </a>
           </div>
-          <div className="mt-2">
-            &copy; Lior Bragilevsky {getYear()}
-            <div className="text-right mb-2">
-              <a href="http://localhost:3000" className="no-uderline">
+          <div className="text-white row">
+            <div className="text-left col-9">
+              &copy; Lior Bragilevsky {getYear()}
+            </div>
+            <div className="text-right col-3">
+              <a
+                href="http://localhost:3000"
+                className="no-uderline text-white"
+              >
                 TOP
-                <span>
-                  <FontAwesomeIcon icon={faArrowUp} className="up-arrow ml-1" />
-                </span>
+                <FaArrowUp className="up-arrow ml-1" />
               </a>
             </div>
           </div>

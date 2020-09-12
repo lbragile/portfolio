@@ -5,7 +5,6 @@
 }
 
 body {
-  background: rgba(50, 50, 50, 1);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -15,4 +14,12 @@ h1 {
 
 .required {
   color: red;
+}
+
+section:nth-child(odd) {
+  background: rgb(39, 39, 39, 0.9);
+}
+
+section:nth-child(even) {
+  background: rgba(202, 202, 202, 0.9);
 }

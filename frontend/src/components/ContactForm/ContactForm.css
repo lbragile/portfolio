@@ -1,0 +1,16 @@
+.input-field:focus {
+  background: rgb(240, 255, 153);
+}
+
+h2 {
+  color: rgb(123, 255, 255);
+}
+
+h3 {
+  color: rgb(123, 255, 152);
+}
+
+p,
+ul {
+  font-size: 1.2rem;
+}
