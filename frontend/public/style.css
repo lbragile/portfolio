@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,10 +20,10 @@ h1 {
   color: red;
 }
 
-section:nth-child(odd) {
+section:nth-child(even) {
   background: rgb(39, 39, 39, 0.9);
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
   background: rgba(202, 202, 202, 0.9);
 }

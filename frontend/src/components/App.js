@@ -1,7 +1,11 @@
 import React from "react";
 import uuid from "react-uuid";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+
+import Navbar from "./Navbar/Navbar.js";
 import LandingPage from "./LandingPage/LandingPage.js";
 import About from "./About/About.js";
 import Project from "./Project/Project";
@@ -11,8 +15,10 @@ import Footer from "./Footer/Footer.js";
 function App() {
   return (
     <div>
+      <Navbar />
       <LandingPage src="images/banner.png" />
       <About />
+
       <section className="projects">
         <h1 className="display-4 font-weight-bolder pt-3 text-center">
           Projects

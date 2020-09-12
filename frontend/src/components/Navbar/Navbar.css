@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #e3f2fd;
+}
+
+.navbar-brand {
+  font-family: cursive;
+}
+
+.dropdown-menu {
+  background-color: #e3f2fd;
+}
+
+.dropdown-divider {
+  border-top: rgb(196, 196, 196) solid 1px;
+}
+
+.dropdown-item:hover {
+  font-weight: bold;
+  background: none;
+}

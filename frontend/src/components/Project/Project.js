@@ -38,11 +38,8 @@ export default function Project(props) {
 
   return (
     <>
-      <div className="container text-white">
-        <h2
-          className="display-5 my-3 font-weight-bolder pt-3 text-center"
-          id={props.name + "-heading"}
-        >
+      <div className="container text-white" id={props.name + "-project"}>
+        <h2 className="display-5 my-3 font-weight-bolder pt-3 text-center">
           {props.name}
         </h2>
 

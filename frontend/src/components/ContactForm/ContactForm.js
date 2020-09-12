@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import { Button, Form } from "react-bootstrap";
 import "./ContactForm.css";
 
 export default function ContactForm() {
+  const [sent, setSent] = useState(false);
+
   function handleSubmit(e) {
     e.preventDefault(); // prevent going to a different page
 
@@ -27,10 +29,29 @@ export default function ContactForm() {
       });
 
     e.target.reset(); // reset the form values after it is submitted successfully
+    setSent(true);
+  }
+
+  // user pressed "send" button -> changes to green color and says "sent",
+  // otherwise is blue color and says "send"
+  function getSubmitButtonType() {
+    let variant_type = sent ? "success" : "primary";
+    let button_text = sent ? "sent" : "send";
+
+    return (
+      <Button type="submit" variant={variant_type}>
+        {button_text}
+      </Button>
+    );
+  }
+
+  // change the button to a send state when the user is typing again
+  function handleFocus() {
+    setSent(false);
   }
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact-section">
       <div className="container">
         <h1 className="display-4 font-weight-bolder pt-3 text-center">
           Questions?
@@ -47,6 +68,7 @@ export default function ContactForm() {
               type="text"
               placeholder="John"
               required
+              onFocus={handleFocus}
             />
           </Form.Group>
 
@@ -57,6 +79,7 @@ export default function ContactForm() {
               name="lastname"
               type="text"
               placeholder="Doe"
+              onFocus={handleFocus}
             />
           </Form.Group>
 
@@ -70,6 +93,7 @@ export default function ContactForm() {
               type="email"
               placeholder="example@email.com"
               required
+              onFocus={handleFocus}
             />
             <Form.Text className="text-muted">
               Your email will not be shared with anyone else{" "}
@@ -90,6 +114,7 @@ export default function ContactForm() {
               type="text"
               placeholder="Let's Connect!"
               required
+              onFocus={handleFocus}
             />
           </Form.Group>
 
@@ -100,6 +125,7 @@ export default function ContactForm() {
               name="phone"
               type="tel"
               placeholder="+1 (012)-345-6789"
+              onFocus={handleFocus}
             />
             <Form.Text className="text-muted">
               Your number will not be shared with anyone else{" "}
@@ -121,6 +147,7 @@ export default function ContactForm() {
               cols="30"
               placeholder="If you would like to connect, please share your social media and/or website here..."
               required
+              onFocus={handleFocus}
             />
           </Form.Group>
 
@@ -137,9 +164,8 @@ export default function ContactForm() {
             />
           </Form.Group>
           <div className="form-buttons pb-3">
-            <Button type="submit" variant="primary">
-              Send
-            </Button>
+            {getSubmitButtonType()}
+
             <Button type="reset" variant="secondary" className="ml-1">
               Clear
             </Button>
