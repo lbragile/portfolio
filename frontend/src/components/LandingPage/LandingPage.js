@@ -8,8 +8,8 @@ export default function LandingPage(props) {
       className="jumbotron jumbotron-fluid align-middle"
     >
       <div className="banner-text text-center text-white">
-        <h4 className="display-4 font-weight-bold">Hi, I'm Lior.</h4>
-        <h1 style={{ color: "white" }} className="mt-5">
+        <h4 className="fade-in display-4 font-weight-bold">Hi, I'm Lior.</h4>
+        <h1 style={{ color: "white" }} className="fade-in mt-5">
           Like what you see?
           <br /> Let's Connect!
         </h1>

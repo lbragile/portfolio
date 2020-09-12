@@ -9,14 +9,14 @@ export default function About() {
           About Me
         </h1>
         <div className="row align-items-center">
-          <div className="about-img text-center col-sm-3 my-3">
+          <div className="about-img text-center my-3 col-lg-4">
             <img
               className="rounded border border-white"
               src="images/portrait.jpeg"
               alt="Me playing chess outdoors"
             />
           </div>
-          <div className="about-text text-justify pb-3 col-sm-9">
+          <div className="about-text text-justify pb-3 col-lg-8">
             I graduated with a MASc (
             <em>Accelerated Program - First Class with Distinction</em>) from
             Simon Fraser University in April 2020. This comes after completing

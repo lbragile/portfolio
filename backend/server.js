@@ -25,7 +25,7 @@ app.post("/", function (req, res) {
 
   var { first, last, email, subject, phone, message } = req.body;
   var mailOptions = {
-    from: req.body.email,
+    from: email,
     to: my_email,
     subject: subject,
     html:

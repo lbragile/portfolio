@@ -114,6 +114,31 @@ function App() {
           ]}
           github="https://github.com/lbragile/ChatIn"
         />
+        <Project
+          name="Portfolio"
+          src="images/portfolio.gif"
+          alt="A walkthrough my full stack developer portfolio website"
+          description={[
+            "This website highlights my full stack development projects and provides a means for interested guests to contact/connect with me. I designed my own server (as usual) and used ",
+            <b key={uuid()}>ReactJS</b>,
+            " to create the user interface. The front end communicates with the server (backend) via API calls with ",
+            <b key={uuid()}>Axios</b>,
+            '. Nodemailer is used to allow users to connect with me (through the contact form) by sending an email to my adress with the relevant information. As always, when dealing with sensitive information, environment variables are implemented, rather than "hard-coding" the values in the public script.',
+          ]}
+          implementation={[
+            <ul key={uuid()}>
+              <li key={uuid()}>HTML5, CSS3, Bootstrap4, Javascript</li>
+              <li key={uuid()}>
+                ReactJS {"→"} <abbr title="User Interface">UI</abbr> (Frontend)
+              </li>
+              <li key={uuid()}>
+                NodeJS, ExpressJS, Socket.io {"→"} Client/Server Communication
+              </li>
+              <li key={uuid()}>Git {"→"} Version Control</li>
+            </ul>,
+          ]}
+          github="https://github.com/lbragile/Portfolio"
+        />
       </section>
 
       <ContactForm />

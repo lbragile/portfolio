@@ -7,10 +7,10 @@ export default function Project(props) {
     if (!props.website && props.docs) {
       return (
         <>
-          <a href={props.github}>
+          <a href={props.github} target="_blank" rel="noopener noreferrer">
             <Button variant="primary">GitHub</Button>
           </a>
-          <a href={props.docs}>
+          <a href={props.docs} target="_blank" rel="noopener noreferrer">
             <Button variant="secondary" className="mx-1">
               Documentation
             </Button>
@@ -20,7 +20,7 @@ export default function Project(props) {
     } else if (!props.website) {
       return (
         <>
-          <a href={props.github}>
+          <a href={props.github} target="_blank" rel="noopener noreferrer">
             <Button variant="primary">GitHub</Button>
           </a>
         </>
@@ -28,7 +28,7 @@ export default function Project(props) {
     } else {
       return (
         <>
-          <a href={props.website}>
+          <a href={props.website} target="_blank" rel="noopener noreferrer">
             <Button variant="info">Visit Site</Button>
           </a>
         </>
@@ -46,10 +46,10 @@ export default function Project(props) {
         <hr></hr>
 
         <div className="row text-center align-items-center">
-          <div className="col-sm">
-            <img className="mr-4" src={props.src} alt={props.alt} />
+          <div className="col-lg">
+            <img src={props.src} alt={props.alt} />
           </div>
-          <div className="col-sm">
+          <div className="col-lg">
             <div className="desc pt-2 text-center">
               <h3>Description:</h3>
               <p className="text-justify">{props.description}</p>
