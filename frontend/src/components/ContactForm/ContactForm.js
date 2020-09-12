@@ -7,6 +7,7 @@ import "./ContactForm.css";
 export default function ContactForm() {
   function handleSubmit(e) {
     e.preventDefault(); // prevent going to a different page
+
     var formData = {
       first: e.target.firstname.value,
       last: e.target.lastname.value,
@@ -24,6 +25,8 @@ export default function ContactForm() {
       .catch((error) => {
         console.error(error.response);
       });
+
+    e.target.reset(); // reset the form values after it is submitted successfully
   }
 
   return (
@@ -33,7 +36,7 @@ export default function ContactForm() {
           Questions?
         </h1>
 
-        <Form onSubmit={handleSubmit}>
+        <Form className="contactForm" onSubmit={handleSubmit}>
           <Form.Group controlId="formFirstName">
             <Form.Label>
               First Name <span className="required">*</span>
@@ -112,7 +115,6 @@ export default function ContactForm() {
               Message <span className="required">*</span>
             </Form.Label>
             <Form.Control
-              className="input-field"
               name="message"
               as="textarea"
               rows="10"

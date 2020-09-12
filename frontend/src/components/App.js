@@ -12,9 +12,7 @@ function App() {
   return (
     <div>
       <LandingPage src="images/banner.png" />
-
       <About />
-
       <section className="projects">
         <h1 className="display-4 font-weight-bolder pt-3 text-center">
           Projects

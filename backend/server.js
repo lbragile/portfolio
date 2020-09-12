@@ -23,20 +23,20 @@ app.post("/", function (req, res) {
     },
   });
 
-  var { firstname, lastname, email, subject, phone, message } = req.body;
+  var { first, last, email, subject, phone, message } = req.body;
   var mailOptions = {
     from: req.body.email,
     to: my_email,
     subject: subject,
     html:
       message +
-      "\r\n\r\n Name: " +
-      firstname +
+      "<br/><br/> Name: " +
+      first +
       " " +
-      lastname +
-      "\r\n Email: " +
+      last +
+      "<br/> Email: " +
       email +
-      "\r\n Phone: " +
+      "<br/> Phone: " +
       phone,
   };
 
