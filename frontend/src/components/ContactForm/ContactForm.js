@@ -20,7 +20,7 @@ export default function ContactForm() {
     };
 
     axios
-      .post("http://localhost:5000/", formData)
+      .post("https://lbragile-backend.herokuapp.com/", formData)
       .then((response) => {
         console.log(response);
       })
