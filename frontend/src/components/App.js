@@ -129,7 +129,8 @@ function App() {
             <ul key={uuid()}>
               <li key={uuid()}>HTML5, CSS3, Bootstrap4, Javascript</li>
               <li key={uuid()}>
-                ReactJS {"→"} <abbr title="User Interface">UI</abbr> (Frontend)
+                ReactJS & JSX {"→"} <abbr title="User Interface">UI</abbr>{" "}
+                (Frontend)
               </li>
               <li key={uuid()}>
                 NodeJS, ExpressJS, Socket.io {"→"} Client/Server Communication
