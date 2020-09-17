@@ -124,7 +124,8 @@ export default function ContactForm() {
               className="input-field"
               name="phone"
               type="tel"
-              placeholder="+1 (012)-345-6789"
+              pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+              placeholder="(012) 345-6789"
               onFocus={handleFocus}
             />
             <Form.Text className="text-muted">

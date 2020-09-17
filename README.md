@@ -4,7 +4,7 @@ This website highlights my full stack development projects and provides a means 
 
 ## Demo:
 
-<img src="./frontend/public/images/portfolio.gif" alt="checkmate" style="float: left; zoom:100%;" />
+<img src="./client/public/images/portfolio.gif" alt="Full Stack Developer Portfolio Walkthrough" style="float: left; zoom:100%;" />
 
 ## Usage:
 
