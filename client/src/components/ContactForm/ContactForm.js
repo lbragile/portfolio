@@ -6,8 +6,9 @@ import "./ContactForm.css";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault(); // prevent going to a different page
 
     var formData = {
@@ -19,17 +20,19 @@ export default function ContactForm() {
       message: e.target.message.value,
     };
 
-    axios
-      .post("https://lbragile-backend.herokuapp.com/", formData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error.response);
-      });
+    try {
+      var response = await axios.post("/contact", formData);
+      console.log(response);
 
-    e.target.reset(); // reset the form values after it is submitted successfully
-    setSent(true);
+      // input fields are controlled elements => cannot change without
+      // modifying state so cannot do form.reset()
+      //reset the form values after it is submitted successfully
+      document.getElementById("resetButton").click();
+      setEmail("");
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   // user pressed "send" button -> changes to green color and says "sent",
@@ -48,6 +51,26 @@ export default function ContactForm() {
   // change the button to a send state when the user is typing again
   function handleFocus() {
     setSent(false);
+  }
+
+  // API call to check if email is real
+  async function checkEmail(e) {
+    var response = await axios.get(
+      "https://isitarealemail.com/api/email/validate?email=" + e.target.value,
+      {
+        crossDomain: true,
+        headers: {
+          Authorization: "Bearer 85b25269-7b1b-4b10-b73c-10838a91e05c",
+        },
+      }
+    );
+    var isValid = (await response.data.status) === "valid";
+
+    console.log(isValid);
+    if (!isValid) {
+      alert("Email is invalid!");
+      setEmail(""); // reset the input field
+    }
   }
 
   return (
@@ -91,9 +114,12 @@ export default function ContactForm() {
               className="input-field"
               name="email"
               type="email"
+              value={email}
               placeholder="example@email.com"
               required
               onFocus={handleFocus}
+              onBlur={checkEmail}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Form.Text className="text-muted">
               Your email will not be shared with anyone else{" "}
@@ -167,7 +193,12 @@ export default function ContactForm() {
           <div className="form-buttons pb-3">
             {getSubmitButtonType()}
 
-            <Button type="reset" variant="secondary" className="ml-1">
+            <Button
+              type="reset"
+              variant="secondary"
+              className="ml-1"
+              id="resetButton"
+            >
               Clear
             </Button>
           </div>

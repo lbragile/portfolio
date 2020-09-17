@@ -1,6 +1,6 @@
 # Portfolio
 
-This website highlights my full stack development projects and provides a means for interested guests to contact/connect with me. I designed my own server (as usual) and used ReactJS to create the user interface. The front end communicates with the server (backend) via API calls with Axios. Nodemailer is used to allow users to connect with me (through the contact form) by sending an email to my adress with the relevant information. As always, when dealing with sensitive information, environment variables are implemented, rather than "hard-coding" the values in the public script.
+This website highlights my full stack development projects and provides a means for interested guests to contact/connect with me. I designed my own server (as usual) and used ReactJS to create the user interface. The front end communicates with the server (backend) via API calls with Axios. Nodemailer is used to allow users to connect with me (through the contact form) by sending an email to my adress with the relevant information. As always, when dealing with sensitive information, environment variables are implemented, rather than "hard-coding" the values in the public script. Lastly, I deployed the web application on Heroku, where a production build is created for the client side code.
 
 ## Demo:
 
@@ -10,19 +10,19 @@ This website highlights my full stack development projects and provides a means 
 
 #### Clone the Repository
 
-- `git clone https://github.com/lbragile/ChatIn.git`
-- `cd ChatIn`
+- `git clone https://github.com/lbragile/Portfolio.git`
+- `cd Portfolio`
 
 #### Install the Required Dependencies (Client & Server)
 
-- `cd frontend && npm install`
-- `cd backend && npm install`
+- `npm install`
+- `cd client && npm install`
 
-#### Start the Server
+#### Start the Server (Terminal 1 - Portfolio/)
 
 - `npm run devStart`
 
-#### Start the Client
+#### Start the Client (Terminal 2 - Portfolio/client/)
 
 - `npm start`
 
@@ -42,7 +42,7 @@ https://lbragile.herokuapp.com/
 ##### Minor
 
 - [ ] Correct Email verification
-- [ ] Show more/less for project description
+- [x] Show more/less for project description
 
 ## Implementation Details:
 

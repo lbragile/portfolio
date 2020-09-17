@@ -3,7 +3,7 @@ var router = express.Router();
 
 var nodemailer = require("nodemailer");
 
-router.post("/", (req, res) => {
+router.post("/contact", (req, res) => {
   let my_email = process.env.EMAIL;
   var transporter = nodemailer.createTransport({
     service: "Gmail",

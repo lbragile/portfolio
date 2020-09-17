@@ -10,3 +10,11 @@ ul {
 hr {
   border: white solid 1px;
 }
+
+.see-more-or-less {
+  color: cyan;
+}
+
+.see-more-or-less:hover {
+  cursor: pointer;
+}
