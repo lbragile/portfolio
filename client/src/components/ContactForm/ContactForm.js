@@ -47,6 +47,8 @@ export default function ContactForm() {
     }
   }
 
+  const resetEmail = () => setEmail("");
+
   return (
     <section className="contact anchor" id="contact-section">
       <div className="container">
@@ -185,6 +187,7 @@ export default function ContactForm() {
               variant="secondary"
               className="ml-1"
               id="resetButton"
+              onClick={resetEmail}
             >
               Clear
             </Button>
