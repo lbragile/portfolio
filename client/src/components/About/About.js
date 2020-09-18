@@ -54,7 +54,6 @@ export default function About() {
                 <Button
                   className="font-weight-bold mb-2"
                   variant="primary"
-                  type="button"
                   data-toggle="collapse"
                   data-target="#resume-frame"
                   aria-expanded="false"
@@ -74,7 +73,7 @@ export default function About() {
                       href="misc/resume.pdf"
                       download
                     >
-                      <FcDownload size="1.5rem" /> Download
+                      <FcDownload size="1.5rem" /> Download{" "}
                       <FcDownload size="1.5rem" />
                     </a>
                   </span>
