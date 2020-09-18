@@ -10,7 +10,8 @@ app.listen(port, () => console.log(`listening on port: ${port}`));
 app.use(express.json({ limit: "1mb" })); // allow json formating in post
 app.use(cors());
 
-app.post("/contact", require("./routes/homeRoutes"));
+app.use("/contact", require("./routes/contactRoutes"));
+app.use("/realEmail", require("./routes/realEmailRoutes"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

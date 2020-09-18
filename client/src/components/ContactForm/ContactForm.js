@@ -35,46 +35,20 @@ export default function ContactForm() {
     }
   }
 
-  // user pressed "send" button -> changes to green color and says "sent",
-  // otherwise is blue color and says "send"
-  function getSubmitButtonType() {
-    let variant_type = sent ? "success" : "primary";
-    let button_text = sent ? "sent" : "send";
-
-    return (
-      <Button type="submit" variant={variant_type}>
-        {button_text}
-      </Button>
-    );
-  }
-
   // change the button to a send state when the user is typing again
-  function handleFocus() {
-    setSent(false);
-  }
+  const handleFocus = () => setSent(false);
 
   // API call to check if email is real
   async function checkEmail(e) {
-    var response = await axios.get(
-      "https://isitarealemail.com/api/email/validate?email=" + e.target.value,
-      {
-        crossDomain: true,
-        headers: {
-          Authorization: "Bearer 85b25269-7b1b-4b10-b73c-10838a91e05c",
-        },
-      }
-    );
-    var isValid = (await response.data.status) === "valid";
-
-    console.log(isValid);
-    if (!isValid) {
+    var response = await axios.get("/realEmail/" + e.target.value);
+    if (!(await response.data.isValid)) {
       alert("Email is invalid!");
       setEmail(""); // reset the input field
     }
   }
 
   return (
-    <section className="contact" id="contact-section">
+    <section className="contact anchor" id="contact-section">
       <div className="container">
         <h1 className="display-4 font-weight-bolder pt-3 text-center">
           Questions?
@@ -191,7 +165,20 @@ export default function ContactForm() {
             />
           </Form.Group>
           <div className="form-buttons pb-3">
-            {getSubmitButtonType()}
+            {
+              // user pressed "send" button -> changes to green color and says "sent",
+              // otherwise is blue color and says "send"
+
+              sent ? (
+                <Button type="button" variant="success">
+                  Sent
+                </Button>
+              ) : (
+                <Button type="submit" variant="primary">
+                  Send
+                </Button>
+              )
+            }
 
             <Button
               type="reset"

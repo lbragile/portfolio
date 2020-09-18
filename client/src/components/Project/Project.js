@@ -46,7 +46,10 @@ export default function Project(props) {
 
   return (
     <>
-      <div className="container text-white" id={props.name + "-project"}>
+      <div
+        className="container text-white anchor-top"
+        id={props.name + "-project"}
+      >
         <h2 className="display-5 my-3 font-weight-bolder pt-3 text-center">
           {props.name}
         </h2>
@@ -82,7 +85,7 @@ export default function Project(props) {
             </div>
             <div className="impl text-center">
               <h3>Implementation Details:</h3>
-              <div className="text-justify">{props.implementation}</div>
+              <div className="text-left">{props.implementation}</div>
             </div>
 
             <div className="link-buttons pb-3">{ButtonType()}</div>

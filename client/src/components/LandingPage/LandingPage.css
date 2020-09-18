@@ -1,5 +1,5 @@
 .jumbotron {
-  height: 100vh;
+  height: calc(100vh - 60px);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -26,5 +26,31 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+.scroll-down-hint {
+  animation: bounce 2s infinite;
+  animation-fill-mode: both;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
   }
 }

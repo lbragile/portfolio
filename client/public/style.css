@@ -27,3 +27,11 @@ section:nth-child(even) {
 section:nth-child(odd) {
   background: rgba(202, 202, 202, 0.9);
 }
+
+.anchor {
+  padding: 40px 0;
+}
+
+.anchor-top {
+  padding-top: 40px;
+}

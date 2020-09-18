@@ -15,11 +15,11 @@ import Footer from "./Footer/Footer.js";
 function App() {
   return (
     <div>
-      <Navbar />
       <LandingPage src="images/banner.png" />
+      <Navbar />
       <About />
 
-      <section className="projects">
+      <section className="projects anchor">
         <h1 className="display-4 font-weight-bolder pt-3 text-center">
           Projects
         </h1>

@@ -41,7 +41,7 @@ https://lbragile.herokuapp.com/
 
 ##### Minor
 
-- [ ] Correct Email verification
+- [x] Correct Email verification
 - [x] Show more/less for project description
 
 ## Implementation Details:
