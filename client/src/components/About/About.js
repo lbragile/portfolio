@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 
+import { Button } from "react-bootstrap";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { FcDownload } from "react-icons/fc";
 
@@ -50,8 +51,9 @@ export default function About() {
                 </a>
               </div>
               <div className="text-center">
-                <div
-                  className="btn btn-primary font-weight-bold mb-2"
+                <Button
+                  className="font-weight-bold mb-2"
+                  variant="primary"
                   type="button"
                   data-toggle="collapse"
                   data-target="#resume-frame"
@@ -59,7 +61,7 @@ export default function About() {
                   aria-controls="resume-frame"
                 >
                   Preview Resume
-                </div>
+                </Button>
                 <div className="collapse" id="resume-frame">
                   <iframe
                     src="misc/resume.pdf"
@@ -68,7 +70,7 @@ export default function About() {
                   />
                   <span>
                     <a
-                      className="btn btn-warning font-weight-bold"
+                      className="btn btn-warning font-weight-bold mt-1"
                       href="misc/resume.pdf"
                       download
                     >
