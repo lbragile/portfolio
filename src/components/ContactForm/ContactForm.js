@@ -11,7 +11,7 @@ export default function ContactForm() {
   var resetBtn = useRef();
 
   async function handleSubmit(e) {
-    e.preventDefault(); // prevent going to a different page
+    e.preventDefault();
     var formData = new FormData(e.target);
     try {
       await axios.post("https://tabmerger-backend.herokuapp.com/contact", [...formData]);
@@ -24,30 +24,24 @@ export default function ContactForm() {
 
   return (
     <div className="container" id="contact-section">
-      <h1 className="display-4 font-weight-bolder pt-3 text-center">Questions?</h1>
+      <h2 className="font-weight-bolder pt-3 text-center">
+        Questions{" "}
+        <span role="img" aria-label="person raising up their hand to ask a question">
+          🙋‍♂️
+        </span>
+      </h2>
 
       <Form className="contactForm" onSubmit={handleSubmit}>
         <Form.Group controlId="formFirstName">
           <Form.Label>
-            First Name<span className="required">*</span>
+            Name<span className="required">*</span>
           </Form.Label>
           <Form.Control
             className="input-field"
             name="firstname"
             type="text"
-            placeholder="John"
+            placeholder="John Doe"
             required
-            onFocus={() => setSent(false)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formLastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            className="input-field"
-            name="lastname"
-            type="text"
-            placeholder="Doe"
             onFocus={() => setSent(false)}
           />
         </Form.Group>

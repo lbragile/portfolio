@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(29, 31, 33);
+  color: white;
+  overflow-x: hidden;
+}
+
+.required {
+  color: red;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.btn:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-switch {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    text-align: center;
+  }
+}

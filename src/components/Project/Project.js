@@ -37,19 +37,14 @@ export default function Project(props) {
   }
 
   return (
-    <div className="container text-white anchor-top" id={props.name}>
-      <h2 className="display-5 my-3 font-weight-bolder pt-3 text-center">{props.name}</h2>
+    <div className="container text-white anchor-top my-2" id={props.name}>
+      <div className="card">
+        <h2 className="card-header text-center">{props.name}</h2>
+        <div className="card-body">
+          <img src={props.src} alt={props.alt} className="card-img-left rounded" />
 
-      <hr />
-
-      <div className="row text-center align-items-center">
-        <div className="col-lg">
-          <img src={props.src} alt={props.alt} />
-        </div>
-        <div className="col-lg">
           <div className="desc pt-2 text-center">
-            <h3>Description:</h3>
-            <div className="text-justify">
+            <div className="card-text text-justify">
               {props.description.props.children.length > MAX_DESC_LENGTH.current && !seeMore
                 ? props.description.props.children.substr(0, MAX_DESC_LENGTH.current) + "..."
                 : props.description.props.children}
@@ -58,19 +53,19 @@ export default function Project(props) {
               </span>
             </div>
           </div>
-          <div className="impl text-center">
-            <h3>Implementation Details:</h3>
-            <div className="text-left">
-              <ul>
-                {props.implementation.map((item) => {
-                  return <li key={Math.random()}>{item}</li>;
-                })}
-              </ul>
-            </div>
-          </div>
-
-          <div className="link-buttons pb-3">{ButtonType()}</div>
         </div>
+        <h3 className="card-title text-center">Implementation Details</h3>
+        <ul className="list-group list-group-flush text-left">
+          {props.implementation.map((item) => {
+            return (
+              <li className="list-group-item" key={Math.random()}>
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="card-body link-buttons pt-4 text-center">{ButtonType()}</div>
       </div>
     </div>
   );

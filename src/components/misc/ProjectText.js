@@ -23,12 +23,13 @@ const ProjectText = [
       </span>
     ),
     implementation: [
-      "C++, Makefile, YAML",
-      "Markdown → Documentation",
-      "Git → Version Control",
-      "GTest → Unit Testing",
+      "HTML5, CSS3, Javascript (ReactJS)",
+      "Markdown → Documentation & Templates for Issues/Pull Requests",
+      "jsDoc → Documentation for Codebase",
+      "Jest → Unit Testing",
       "Continuous Integration → GitHub Actions",
-      "SFML → Graphical User Interface",
+      "Git → Version Control",
+      "Chrome API → Extension Control",
     ],
     github: "https://github.com/lbragile/TabMerger",
     docs: "https://lbragile.github.io/TabMerger/",

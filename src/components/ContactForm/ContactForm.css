@@ -2,15 +2,16 @@
   background: rgb(240, 255, 153);
 }
 
-h2 {
-  color: rgb(123, 255, 255);
+#contact-section {
+  width: 50%;
 }
 
-h3 {
-  color: rgb(123, 255, 152);
+#contact-section label {
+  margin-bottom: 3px;
 }
 
-p,
-ul {
-  font-size: 1.2rem;
+@media screen and (max-width: 600px) {
+  #contact-section {
+    width: 90%;
+  }
 }

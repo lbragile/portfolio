@@ -45,15 +45,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#project-section"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
               Projects
             </a>
             <div className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
