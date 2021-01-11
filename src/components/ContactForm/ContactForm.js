@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 
 import { Button, Form } from "react-bootstrap";
@@ -8,26 +8,14 @@ export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [email, setEmail] = useState("");
 
+  var resetBtn = useRef();
+
   async function handleSubmit(e) {
     e.preventDefault(); // prevent going to a different page
-
-    var formData = {
-      first: e.target.firstname.value,
-      last: e.target.lastname.value,
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      phone: e.target.phone.value,
-      message: e.target.message.value,
-    };
-
+    var formData = new FormData(e.target);
     try {
-      var response = await axios.post("/contact", formData);
-      console.log(response);
-
-      // input fields are controlled elements => cannot change without
-      // modifying state so cannot do form.reset()
-      //reset the form values after it is submitted successfully
-      document.getElementById("resetButton").click();
+      await axios.post("https://tabmerger-backend.herokuapp.com/contact", [...formData]);
+      resetBtn.current.click();
       setEmail("");
       setSent(true);
     } catch (err) {
@@ -52,14 +40,12 @@ export default function ContactForm() {
   return (
     <section className="contact anchor" id="contact-section">
       <div className="container">
-        <h1 className="display-4 font-weight-bolder pt-3 text-center">
-          Questions?
-        </h1>
+        <h1 className="display-4 font-weight-bolder pt-3 text-center">Questions?</h1>
 
         <Form className="contactForm" onSubmit={handleSubmit}>
           <Form.Group controlId="formFirstName">
             <Form.Label>
-              First Name <span className="required">*</span>
+              First Name<span className="required">*</span>
             </Form.Label>
             <Form.Control
               className="input-field"
@@ -73,18 +59,12 @@ export default function ContactForm() {
 
           <Form.Group controlId="formLastName">
             <Form.Label>Last Name</Form.Label>
-            <Form.Control
-              className="input-field"
-              name="lastname"
-              type="text"
-              placeholder="Doe"
-              onFocus={handleFocus}
-            />
+            <Form.Control className="input-field" name="lastname" type="text" placeholder="Doe" onFocus={handleFocus} />
           </Form.Group>
 
           <Form.Group controlId="formEmail">
             <Form.Label>
-              Email <span className="required">*</span>
+              Email<span className="required">*</span>
             </Form.Label>
             <Form.Control
               className="input-field"
@@ -108,7 +88,7 @@ export default function ContactForm() {
 
           <Form.Group controlId="formSubject">
             <Form.Label>
-              Subject <span className="required">*</span>
+              Subject<span className="required">*</span>
             </Form.Label>
             <Form.Control
               className="input-field"
@@ -141,7 +121,7 @@ export default function ContactForm() {
 
           <Form.Group controlId="formTextArea">
             <Form.Label>
-              Message <span className="required">*</span>
+              Message<span className="required">*</span>
             </Form.Label>
             <Form.Control
               name="message"
@@ -158,7 +138,7 @@ export default function ContactForm() {
             <Form.Check
               type="checkbox"
               label={[
-                "I am not a robot ",
+                "I am not a robot",
                 <span key={1} className="required">
                   *
                 </span>,
@@ -167,22 +147,12 @@ export default function ContactForm() {
             />
           </Form.Group>
           <div className="form-buttons pb-3">
-            {
-              // user pressed "send" button -> changes to green color and says "sent",
-              // otherwise is blue color and says "send"
-
-              sent ? (
-                <Button type="button" variant="success">
-                  Sent
-                </Button>
-              ) : (
-                <Button type="submit" variant="primary">
-                  Send
-                </Button>
-              )
-            }
+            <Button type="submit" variant={sent ? "success" : "primary"}>
+              {sent ? "Sent" : "Send"}
+            </Button>
 
             <Button
+              ref={resetBtn}
               type="reset"
               variant="secondary"
               className="ml-1"

@@ -46,13 +46,8 @@ export default function Project(props) {
 
   return (
     <>
-      <div
-        className="container text-white anchor-top"
-        id={props.name + "-project"}
-      >
-        <h2 className="display-5 my-3 font-weight-bolder pt-3 text-center">
-          {props.name}
-        </h2>
+      <div className="container text-white anchor-top" id={props.name + "-project"}>
+        <h2 className="display-5 my-3 font-weight-bolder pt-3 text-center">{props.name}</h2>
 
         <hr></hr>
 
@@ -63,16 +58,16 @@ export default function Project(props) {
           <div className="col-lg">
             <div className="desc pt-2 text-center">
               <h3 key={Math.random()}>Description:</h3>
-              {props.description.length > max_desc_length && !seeMore ? (
+              {props.description > max_desc_length && !seeMore ? (
                 <p className="text-justify">
-                  {props.description.substr(0, max_desc_length) + "... "}
+                  {props.description.textContent.substr(0, max_desc_length) + "... "}
                   <span className="see-more-or-less" onClick={flipMoreLess}>
                     See More
                   </span>
                 </p>
               ) : (
                 <p className="text-justify">
-                  {props.description + " "}
+                  {props.description}
                   {seeMore ? (
                     <span className="see-more-or-less" onClick={flipMoreLess}>
                       See Less
@@ -85,7 +80,13 @@ export default function Project(props) {
             </div>
             <div className="impl text-center">
               <h3>Implementation Details:</h3>
-              <div className="text-left">{props.implementation}</div>
+              <div className="text-left">
+                <ul>
+                  {props.implementation.map((item) => {
+                    return <li key={Math.random()}>{item}</li>;
+                  })}
+                </ul>
+              </div>
             </div>
 
             <div className="link-buttons pb-3">{ButtonType()}</div>
