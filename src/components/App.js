@@ -15,8 +15,8 @@ import ProjectText from "./misc/ProjectText";
 function App() {
   return (
     <div>
-      <LandingPage src="./images/banner.png" />
       <Navbar />
+      <LandingPage src="./images/banner.png" />
       <About />
 
       <section className="projects anchor">

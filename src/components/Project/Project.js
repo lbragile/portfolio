@@ -1,48 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "react-bootstrap";
 import "./Project.css";
 
 export default function Project(props) {
-  var max_desc_length = 450;
+  const MAX_DESC_LENGTH = useRef(400);
 
   const [seeMore, setSeeMore] = useState(false);
 
   function ButtonType() {
-    if (!props.website && props.docs) {
-      return (
-        <>
-          <a href={props.github} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="mr-2">
-              GitHub
-            </Button>
-          </a>
-          <a href={props.docs} target="_blank" rel="noopener noreferrer">
-            <Button variant="secondary" className="mx-1">
-              Documentation
-            </Button>
-          </a>
-        </>
-      );
-    } else if (!props.website) {
-      return (
-        <a href={props.github} target="_blank" rel="noopener noreferrer">
-          <Button variant="primary">GitHub</Button>
-        </a>
-      );
-    } else {
-      return (
-        <a href={props.website} target="_blank" rel="noopener noreferrer">
-          <Button variant="info">Visit Site</Button>
-        </a>
-      );
+    var urls = [], variant_type = [], btn_text = []; // prettier-ignore
+    if (props.github) {
+      urls.push(props.github);
+      variant_type.push("primary");
+      btn_text.push("GitHub");
     }
+    if (props.docs) {
+      urls.push(props.docs);
+      variant_type.push("secondary");
+      btn_text.push("Documentation");
+    }
+    if (props.website) {
+      urls.push(props.website);
+      variant_type.push("info");
+      btn_text.push("Visit Site");
+    }
+
+    return variant_type.map((x, i) => {
+      return (
+        <a href={urls[i]} target="_blank" rel="noopener noreferrer" key={Math.random()}>
+          <Button variant={x} className="mr-2">
+            {btn_text[i]}
+          </Button>
+        </a>
+      );
+    });
   }
 
   return (
     <div className="container text-white anchor-top" id={props.name}>
       <h2 className="display-5 my-3 font-weight-bolder pt-3 text-center">{props.name}</h2>
 
-      <hr></hr>
+      <hr />
 
       <div className="row text-center align-items-center">
         <div className="col-lg">
@@ -51,25 +49,14 @@ export default function Project(props) {
         <div className="col-lg">
           <div className="desc pt-2 text-center">
             <h3>Description:</h3>
-            {props.description > max_desc_length && !seeMore ? (
-              <p className="text-justify">
-                {props.description.textContent.substr(0, max_desc_length) + "... "}
-                <span className="see-more-or-less" onClick={() => setSeeMore(!seeMore)}>
-                  See More
-                </span>
-              </p>
-            ) : (
-              <p className="text-justify">
-                {props.description}
-                {seeMore ? (
-                  <span className="see-more-or-less" onClick={() => setSeeMore(!seeMore)}>
-                    See Less
-                  </span>
-                ) : (
-                  ""
-                )}
-              </p>
-            )}
+            <div className="text-justify">
+              {props.description.props.children.length > MAX_DESC_LENGTH.current && !seeMore
+                ? props.description.props.children.substr(0, MAX_DESC_LENGTH.current) + "..."
+                : props.description.props.children}
+              <span className="see-more-or-less" onClick={() => setSeeMore(!seeMore)}>
+                {seeMore ? " See Less" : " See More"}
+              </span>
+            </div>
           </div>
           <div className="impl text-center">
             <h3>Implementation Details:</h3>

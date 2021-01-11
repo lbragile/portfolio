@@ -8,7 +8,18 @@ const ProjectText = [
     description: (
       <span>
         TabMerger, as the name suggests, merges your tabs into one location to save memory usage and increase your
-        productivity. TabMerger is a cross-browser extension - currently available on Chrome, Firefox, and Edge.
+        productivity. TabMerger is a cross-browser extension - currently available on Chrome, Firefox, and Edge. <br />
+        <blockquote>
+          <p>
+            Tired of searching through squished tab icons to find that one tab you are sure is there? With TabMerger you
+            can simplify this clutter while greatly increasing productivity in a highly organized and customizable
+            fashion! A single click is all it takes to merge your tabs into a single place, where you can then
+            re-arrange them into appropriate groups, delete extra/unwanted tabs, customize group colors, and so much
+            more. All tabs that are merged into TabMerger are stored internally for you to use at a later time, even
+            when you close the browser window. Lots of analytics are provided to keep you informed about the state of
+            your tabs.
+          </p>
+        </blockquote>
       </span>
     ),
     implementation: [
@@ -122,7 +133,7 @@ const ProjectText = [
     ),
     implementation: [
       "HTML5, CSS3, Bootstrap4, Javascript",
-      'ReactJS & JSX → <abbr title="User Interface">UI</abbr> (Frontend)',
+      "ReactJS & JSX → User Interface (Frontend)",
       "NodeJS, ExpressJS, Socket.io → Client/Server Communication",
       "Git → Version Control",
     ],

@@ -4,7 +4,7 @@ This website highlights my full stack development projects and provides a means 
 
 ## Demo:
 
-<img src="./client/public/images/portfolio.gif" alt="Full Stack Developer Portfolio Walkthrough" style="float: left; zoom:100%;" />
+<img src="./public/images/portfolio.gif" alt="Full Stack Developer Portfolio Walkthrough" style="float: left; zoom:100%;" />
 
 ## Usage:
 
@@ -13,36 +13,13 @@ This website highlights my full stack development projects and provides a means 
 - `git clone https://github.com/lbragile/Portfolio.git`
 - `cd Portfolio`
 
-#### Install the Required Dependencies (Client & Server)
+#### Install the Required Dependencies
 
 - `npm install`
-- `cd client && npm install`
 
-#### Start the Server (Terminal 1 - Portfolio/)
-
-- `npm run devStart`
-
-#### Start the Client (Terminal 2 - Portfolio/client/)
+#### Start the app on localhost:3000
 
 - `npm start`
-
-#### URL
-
-https://lbragile.herokuapp.com/
-
-## Todo:
-
-##### Major
-
-- [x] Create the necessary components (each section of the page)
-- [x] Make page responsive
-- [x] Table style for projects (pictures on left, text on right)
-- [x] Allow user to send email with message through contact section
-
-##### Minor
-
-- [x] Correct Email verification
-- [x] Show more/less for project description
 
 ## Implementation Details:
 

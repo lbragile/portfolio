@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./Navbar.css";
 
 import ProjectText from "../misc/ProjectText";
 export default function Navbar() {
+  var navRef = useRef();
+  var prevY = useRef(window.scrollY);
+
+  useEffect(() => {
+    function hideOrShowNav(e) {
+      const window = e.currentTarget;
+      navRef.current.style.opacity = +(prevY.current > window.scrollY);
+      navRef.current.style.transition = "all 1s";
+      prevY.current = window.scrollY;
+    }
+
+    window.addEventListener("scroll", (e) => hideOrShowNav(e));
+    return () => {
+      window.removeEventListener("scroll", (e) => hideOrShowNav(e));
+    };
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light sticky-top" id="navbar-section">
+    <nav className="navbar navbar-expand-lg navbar-light sticky-top mb-3" id="navbar-section" ref={navRef}>
       <a className="navbar-brand" href="https://github.com/lbragile/" target="_blank" rel="noopener noreferrer">
         lbragile
       </a>
@@ -42,12 +59,12 @@ export default function Navbar() {
             <div className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
               {ProjectText.map((x, i) => {
                 return (
-                  <>
+                  <span key={Math.random()}>
                     {i === ProjectText.length - 1 ? <div className="dropdown-divider"></div> : null}
-                    <a className="dropdown-item" href={"#" + x.name} key={Math.random()}>
+                    <a className="dropdown-item" href={"#" + x.name}>
                       {x.name}
                     </a>
-                  </>
+                  </span>
                 );
               })}
             </div>
