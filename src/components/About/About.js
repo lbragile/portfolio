@@ -12,7 +12,7 @@ export default function About() {
         <h1 className="display-4 font-weight-bolder pt-3 text-center">About Me</h1>
         <div className="row align-items-center">
           <div className="about-img text-center my-3 col-lg-4">
-            <img className="rounded border border-white" src="images/portrait.jpeg" alt="Me playing chess outdoors" />
+            <img className="rounded border border-white" src="./images/portrait.jpeg" alt="Me playing chess outdoors" />
           </div>
           <div className="about-text text-justify pb-3 col-lg-8">
             I graduated with a MASc (<em>Accelerated Program - First Class with Distinction</em>) from Simon Fraser

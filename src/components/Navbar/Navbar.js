@@ -1,18 +1,11 @@
 import React from "react";
 import "./Navbar.css";
 
+import ProjectText from "../misc/ProjectText";
 export default function Navbar() {
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-light sticky-top"
-      id="navbar-section"
-    >
-      <a
-        className="navbar-brand"
-        href="https://github.com/lbragile/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <nav className="navbar navbar-expand-lg navbar-light sticky-top" id="navbar-section">
+      <a className="navbar-brand" href="https://github.com/lbragile/" target="_blank" rel="noopener noreferrer">
         lbragile
       </a>
       <button
@@ -46,26 +39,17 @@ export default function Navbar() {
             >
               Projects
             </a>
-            <div
-              className="dropdown-menu text-center"
-              aria-labelledby="navbarDropdown"
-            >
-              <a className="dropdown-item" href="#chessCAMO-project">
-                chessCAMO
-              </a>
-              <a className="dropdown-item" href="#SimplifyCOVID-project">
-                SimplifyCOVID
-              </a>
-              <a className="dropdown-item" href="#LoginPlay-project">
-                LoginPlay
-              </a>
-              <a className="dropdown-item" href="#ChatIn-project">
-                ChatIn
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#Portfolio-project">
-                Portfolio
-              </a>
+            <div className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+              {ProjectText.map((x, i) => {
+                return (
+                  <>
+                    {i === ProjectText.length - 1 ? <div className="dropdown-divider"></div> : null}
+                    <a className="dropdown-item" href={"#" + x.name} key={Math.random()}>
+                      {x.name}
+                    </a>
+                  </>
+                );
+              })}
             </div>
           </li>
           <li className="nav-item">

@@ -16,26 +16,11 @@ export default function ContactForm() {
     try {
       await axios.post("https://tabmerger-backend.herokuapp.com/contact", [...formData]);
       resetBtn.current.click();
-      setEmail("");
       setSent(true);
     } catch (err) {
       console.error(err);
     }
   }
-
-  // change the button to a send state when the user is typing again
-  const handleFocus = () => setSent(false);
-
-  // API call to check if email is real
-  async function checkEmail(e) {
-    var response = await axios.get("/realEmail/" + e.target.value);
-    if (!(await response.data.isValid)) {
-      alert("Email is invalid!");
-      setEmail(""); // reset the input field
-    }
-  }
-
-  const resetEmail = () => setEmail("");
 
   return (
     <section className="contact anchor" id="contact-section">
@@ -53,13 +38,19 @@ export default function ContactForm() {
               type="text"
               placeholder="John"
               required
-              onFocus={handleFocus}
+              onFocus={() => setSent(false)}
             />
           </Form.Group>
 
           <Form.Group controlId="formLastName">
             <Form.Label>Last Name</Form.Label>
-            <Form.Control className="input-field" name="lastname" type="text" placeholder="Doe" onFocus={handleFocus} />
+            <Form.Control
+              className="input-field"
+              name="lastname"
+              type="text"
+              placeholder="Doe"
+              onFocus={() => setSent(false)}
+            />
           </Form.Group>
 
           <Form.Group controlId="formEmail">
@@ -73,8 +64,7 @@ export default function ContactForm() {
               value={email}
               placeholder="example@email.com"
               required
-              onFocus={handleFocus}
-              onBlur={checkEmail}
+              onFocus={() => setSent(false)}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Form.Text className="text-muted">
@@ -96,7 +86,7 @@ export default function ContactForm() {
               type="text"
               placeholder="Let's Connect!"
               required
-              onFocus={handleFocus}
+              onFocus={() => setSent(false)}
             />
           </Form.Group>
 
@@ -108,7 +98,7 @@ export default function ContactForm() {
               type="tel"
               pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
               placeholder="(012) 345-6789"
-              onFocus={handleFocus}
+              onFocus={() => setSent(false)}
             />
             <Form.Text className="text-muted">
               Your number will not be shared with anyone else{" "}
@@ -130,7 +120,7 @@ export default function ContactForm() {
               cols="30"
               placeholder="If you would like to connect, please share your social media and/or website here..."
               required
-              onFocus={handleFocus}
+              onFocus={() => setSent(false)}
             />
           </Form.Group>
 
@@ -151,14 +141,7 @@ export default function ContactForm() {
               {sent ? "Sent" : "Send"}
             </Button>
 
-            <Button
-              ref={resetBtn}
-              type="reset"
-              variant="secondary"
-              className="ml-1"
-              id="resetButton"
-              onClick={resetEmail}
-            >
+            <Button ref={resetBtn} type="reset" variant="secondary" className="ml-1" id="resetButton">
               Clear
             </Button>
           </div>

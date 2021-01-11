@@ -1,7 +1,31 @@
+import React from "react";
+
 const ProjectText = [
   {
+    name: "TabMerger",
+    src: "./images/tabmerger.gif",
+    alt: "Quick demo of TabMerger showing what a sample use case is like",
+    description: (
+      <span>
+        TabMerger, as the name suggests, merges your tabs into one location to save memory usage and increase your
+        productivity. TabMerger is a cross-browser extension - currently available on Chrome, Firefox, and Edge.
+      </span>
+    ),
+    implementation: [
+      "C++, Makefile, YAML",
+      "Markdown → Documentation",
+      "Git → Version Control",
+      "GTest → Unit Testing",
+      "Continuous Integration → GitHub Actions",
+      "SFML → Graphical User Interface",
+    ],
+    github: "https://github.com/lbragile/TabMerger",
+    docs: "https://lbragile.github.io/TabMerger/",
+    website: "https://lbragile.github.io/TabMerger-Extension/",
+  },
+  {
     name: "chessCAMO",
-    src: "images/gui.gif",
+    src: "./images/gui.gif",
     alt: "Graphical User Interface illustration for the final product",
     description: (
       <span>
@@ -24,7 +48,7 @@ const ProjectText = [
   },
   {
     name: "SimplifyCOVID",
-    src: "images/covid.gif",
+    src: "./images/covid.gif",
     alt: "Illustration of how to use the covid19 statistics site",
     description: (
       <span>
@@ -39,7 +63,7 @@ const ProjectText = [
   },
   {
     name: "LoginPlay",
-    src: "images/login.gif",
+    src: "./images/login.gif",
     alt: "Demonstration of the server client communication",
     description: (
       <span>
@@ -63,7 +87,7 @@ const ProjectText = [
   },
   {
     name: "ChatIn",
-    src: "images/chat.gif",
+    src: "./images/chat.gif",
     alt: "Chatting with admin through a custom made chat system with login system",
     description: (
       <span>
@@ -84,7 +108,7 @@ const ProjectText = [
   },
   {
     name: "Portfolio",
-    src: "images/portfolio.gif",
+    src: "./images/portfolio.gif",
     alt: "A walkthrough my full stack developer portfolio website",
     description: (
       <span>
