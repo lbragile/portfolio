@@ -101,11 +101,12 @@
 
   .github-stats {
     width: 100%;
+    margin: 0 auto;
   }
 
   .top-lang {
     width: 75%;
-    margin: auto;
+    margin: 0 auto;
   }
 
   #resume-frame {

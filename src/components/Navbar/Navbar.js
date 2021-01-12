@@ -8,10 +8,10 @@ export default function Navbar() {
 
   useEffect(() => {
     function hideOrShowNav(e) {
-      const window = e.currentTarget;
-      navRef.current.style.opacity = +(prevY.current > window.scrollY);
+      const offset = e.currentTarget.scrollY;
       navRef.current.style.transition = "all 1s";
-      prevY.current = window.scrollY;
+      navRef.current.style.opacity = +(prevY.current > offset);
+      prevY.current = offset;
     }
 
     window.addEventListener("scroll", (e) => hideOrShowNav(e));

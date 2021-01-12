@@ -25,15 +25,9 @@ function App() {
     document.getElementById("portrait").style.border = "3px solid " + (dark ? "white" : "#121212");
 
     // cards
-    document.querySelectorAll(".card, .card-header, .list-group-item").forEach((x) => {
+    document.querySelectorAll(".card").forEach((x) => {
       x.style.background = dark ? "white" : "rgb(29, 31, 33)";
       x.style.color = dark ? "black" : "white";
-      x.style.borderBottom =
-        x.className === "list-group-item" || x.className === "card-header" ? "1px solid lightgrey" : null;
-    });
-
-    document.querySelectorAll(".list-group-item:last-child").forEach((x) => {
-      x.style.borderBottom = "none";
     });
 
     document.querySelectorAll(".card-header, .card-footer").forEach((x) => {

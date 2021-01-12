@@ -14,70 +14,56 @@ hr {
   cursor: pointer;
 }
 
-blockquote {
-  background: #7a7a7a;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-}
-
-blockquote p {
-  display: inline;
-}
-
-/* .card-header {
+.card {
   color: black;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
+  position: relative;
 }
 
 .card-body {
-  display: flex;
-  align-items: flex-start;
-  background: grey;
-  align-items: center;
   justify-content: space-around;
 }
 
-.container1,
-.container2 {
+.container-img {
   max-width: 50%;
 }
 
-.card-body img {
-  max-width: 90%;
-} */
-
-.card {
-  color: black;
-}
-
-.card-body {
-  justify-content: space-around;
-}
-
 .card img {
-  max-width: 45%;
+  width: 90%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 12px 3px #0584ff;
+  box-shadow: 0px 0px 12px 3px #0584ff;
 }
 
 .card .desc {
-  max-width: 37.5%;
+  max-width: 40%;
 }
 
 .card li {
   font-size: 1rem;
   padding: 5px;
+  background: inherit;
+  border-bottom: 1px solid lightgrey;
+}
+
+.card li:last-child {
+  border-bottom: none;
 }
 
 @media screen and (max-width: 600px) {
-  .card img,
   .card .desc {
+    max-width: 100%;
+    padding-top: 16px;
+  }
+
+  .container-img {
     max-width: 100%;
   }
 
-  .card iframe {
+  .card img {
     width: 100%;
+    max-height: 250px;
+    -webkit-box-shadow: 0px 0px 5px 3px #0584ff;
+    box-shadow: 0px 0px 5px 3px #0584ff;
   }
 
   .link-buttons .btn {

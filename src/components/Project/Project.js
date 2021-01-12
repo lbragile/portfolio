@@ -41,10 +41,12 @@ export default function Project(props) {
       <div className="card">
         <h3 className="card-header text-center">{props.name}</h3>
         <div className="card-body text-center row">
-          <img src={props.src} alt={props.alt} className="card-img-left rounded" />
+          <div className="container-img my-auto">
+            <img src={props.src} alt={props.alt} className="card-img-left rounded" />
+          </div>
 
-          <div className="desc pt-2">
-            <h4 className="card-title mt-3 mb-2">
+          <div className="desc my-auto">
+            <h4 className="card-title mb-2">
               <b>Description</b>
             </h4>
             <div className="card-text text-justify px-3">

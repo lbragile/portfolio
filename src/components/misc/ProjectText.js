@@ -19,7 +19,7 @@ const ProjectText = [
     ),
     implementation: [
       "HTML5, CSS3, Bootstrap4, JS (React)",
-      "Markdown → Documentation & Templates for Issues/Pull Requests",
+      "Markdown & YAML → Documentation & Templates for Issues/Pull Requests",
       "jsDoc → Codebase Documentation",
       "Jest → Unit Testing",
       "CI/CD → GitHub Actions",
@@ -75,7 +75,12 @@ const ProjectText = [
         are interactive as well.
       </span>
     ),
-    implementation: ["HTML5, CSS3, Javascript (jQuery)", "AJAX → API Communication", "Git → Version Control"],
+    implementation: [
+      "HTML5, CSS3, JS",
+      "jQuery → Simpler JS queries",
+      "AJAX → API Communication",
+      "Git → Version Control",
+    ],
     website: "https://www.simpleglobalstats.com/",
   },
   {
