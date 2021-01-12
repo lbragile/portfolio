@@ -7,9 +7,9 @@ export default function Footer() {
     <>
       <section className="footer">
         <div className="container py-4 text-white">
-          &copy; Lior Bragilevsky {new Date().getFullYear()}
+          <span className="copyright">Copyright &copy; {new Date().getFullYear()} Lior Bragilevsky </span>
           <div className="d-inline-block float-right">
-            <a href="#landingpage-section" className="no-uderline text-white">
+            <a href="#landingpage-section" className="no-underline">
               TOP
               <FaArrowUp className="up-arrow ml-1" />
             </a>

@@ -3,31 +3,26 @@ import React from "react";
 const ProjectText = [
   {
     name: "TabMerger",
-    src: "./images/tabmerger.gif",
+    youtube: "https://www.youtube.com/embed/9eXmYE49jxA?autoplay=1",
     alt: "Quick demo of TabMerger showing what a sample use case is like",
     description: (
       <span>
         TabMerger, as the name suggests, merges your tabs into one location to save memory usage and increase your
-        productivity. TabMerger is a cross-browser extension - currently available on Chrome, Firefox, and Edge. <br />
-        <blockquote>
-          <p>
-            Tired of searching through squished tab icons to find that one tab you are sure is there? With TabMerger you
-            can simplify this clutter while greatly increasing productivity in a highly organized and customizable
-            fashion! A single click is all it takes to merge your tabs into a single place, where you can then
-            re-arrange them into appropriate groups, delete extra/unwanted tabs, customize group colors, and so much
-            more. All tabs that are merged into TabMerger are stored internally for you to use at a later time, even
-            when you close the browser window. Lots of analytics are provided to keep you informed about the state of
-            your tabs.
-          </p>
-        </blockquote>
+        productivity. TabMerger is a cross-browser extension - currently available on Chrome, Firefox, and Edge. Tired
+        of searching through squished tab icons to find that one tab you are sure is there? With TabMerger you can
+        simplify this clutter while greatly increasing productivity in a highly organized and customizable fashion! A
+        single click is all it takes to merge your tabs into a single place, where you can then re-arrange them into
+        appropriate groups, delete extra/unwanted tabs, customize group colors, and so much more. All tabs that are
+        merged into TabMerger are stored internally for you to use at a later time, even when you close the browser
+        window. Lots of analytics are provided to keep you informed about the state of your tabs.
       </span>
     ),
     implementation: [
-      "HTML5, CSS3, Javascript (ReactJS)",
+      "HTML5, CSS3, Bootstrap4, JS (React)",
       "Markdown → Documentation & Templates for Issues/Pull Requests",
-      "jsDoc → Documentation for Codebase",
+      "jsDoc → Codebase Documentation",
       "Jest → Unit Testing",
-      "Continuous Integration → GitHub Actions",
+      "CI/CD → GitHub Actions",
       "Git → Version Control",
       "Chrome API → Extension Control",
     ],
@@ -52,7 +47,7 @@ const ProjectText = [
       "Markdown → Documentation",
       "Git → Version Control",
       "GTest → Unit Testing",
-      "Continuous Integration → GitHub Actions",
+      "CI/CD → GitHub Actions",
       "SFML → Graphical User Interface",
     ],
     github: "https://github.com/lbragile/chessCAMO",
@@ -88,7 +83,7 @@ const ProjectText = [
       </span>
     ),
     implementation: [
-      "HTML5, CSS3, Javascript",
+      "HTML5, CSS3, JS",
       "NodeJS, ExpressJS, Socket.io → Client/Server Communication",
       "EJS Templates → Error handling",
       "MySQL → Login validation",
@@ -110,10 +105,10 @@ const ProjectText = [
       </span>
     ),
     implementation: [
-      "HTML5, CSS3, Bootstrap4, Javascript",
+      "HTML5, CSS3, Bootstrap4, JS",
       "NodeJS, ExpressJS, Socket.io → Client/Server Communication",
       "MongoDB (Mongoose) → Database",
-      "Model View Controller (MVC) Design Pattern",
+      "MVC Design Pattern",
       "Git → Version Control",
     ],
     github: "https://github.com/lbragile/ChatIn",
@@ -133,8 +128,8 @@ const ProjectText = [
       </span>
     ),
     implementation: [
-      "HTML5, CSS3, Bootstrap4, Javascript",
-      "ReactJS & JSX → User Interface (Frontend)",
+      "HTML5, CSS3, Bootstrap4, JS",
+      "React & JSX → User Interface",
       "NodeJS, ExpressJS, Socket.io → Client/Server Communication",
       "Git → Version Control",
     ],

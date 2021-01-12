@@ -16,8 +16,43 @@ function App() {
   const [dark, setDark] = useState(true);
 
   useEffect(() => {
+    document.querySelector(".custom-control-input").checked = dark;
+
     document.body.style.color = dark ? "white" : "black";
     document.body.style.background = dark ? "rgb(29, 31, 33)" : "#efefef";
+
+    // cards
+    document.querySelectorAll(".card, .card-header, .list-group-item").forEach((x) => {
+      x.style.background = dark ? "white" : "rgb(29, 31, 33)";
+      x.style.color = dark ? "black" : "white";
+      x.style.borderBottom =
+        x.className === "list-group-item" || x.className === "card-header" ? "1px solid lightgrey" : null;
+    });
+
+    document.querySelectorAll(".list-group-item:last-child").forEach((x) => {
+      x.style.borderBottom = "none";
+    });
+
+    document.querySelectorAll(".card-header").forEach((x) => {
+      x.style.background = dark ? "#efefef" : "#101010";
+    });
+
+    // social media buttons
+    document.querySelectorAll(".btn-light").forEach((x) => {
+      x.style.background = dark ? "#efefef" : "#676767";
+    });
+
+    document.querySelectorAll(".btn-light svg").forEach((x) => {
+      x.style.color = dark ? "black" : "white";
+    });
+
+    // double arrow
+    document.querySelector(".scroll-down-hint").style.color = dark ? "white" : "black";
+
+    // footer
+    document.querySelectorAll(".copyright, .no-underline").forEach((x) => {
+      x.style.color = dark ? "white" : "black";
+    });
   }, [dark]);
 
   return (
@@ -46,6 +81,7 @@ function App() {
             <Project
               name={x.name}
               src={x.src}
+              youtube={x.youtube}
               alt={x.alt}
               description={x.description}
               implementation={x.implementation}

@@ -4,7 +4,6 @@ import { FaAngleDoubleDown } from "react-icons/fa";
 
 import { Button } from "react-bootstrap";
 import { FaReddit, FaStackOverflow } from "react-icons/fa";
-import { FcDownload } from "react-icons/fc";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 import STATS from "../misc/GitHubStats";
@@ -25,19 +24,19 @@ export default function LandingPage() {
     resumeRef.current.style.opacity = +!resume;
     resumeRef.current.style.width = resume ? "0" : "auto";
     resumeRef.current.style.height = resume ? "0" : "auto";
+    resumeRef.current.style.left = resume ? "-1000px" : "0";
 
-    resumeRef.current.style.transition = "all 1s";
+    resumeRef.current.style.transition = "opacity 1s";
+    resumeRef.current.style.transition = "left 1s";
 
     setResume(!resume);
   }
   return (
     <div className="container" id="landingpage-section">
-      <img
-        src="./images/header.png"
-        alt="Intro header showing myself, name, expertise"
-        id="header-img"
-        className="text-center"
-      />
+      <div className="row mt-4 mb-5">
+        <img src="./images/portrait.png" alt="My portrait" id="portait" />
+        <img src="./images/header.png" alt="My name name & expertise" id="header-title" />
+      </div>
       <div className="row">
         <div className="col-sm-6" id="about-section">
           <h2>
@@ -84,11 +83,6 @@ export default function LandingPage() {
             </Button>
             <div id="resume-frame" ref={resumeRef}>
               <iframe src="other/resume.pdf" title="Preview Resume" className="preview-resume" />
-              <span>
-                <a className="btn btn-warning font-weight-bold mt-1" href="other/resume.pdf" download>
-                  <FcDownload size="1.5rem" />
-                </a>
-              </span>
             </div>
           </div>
         </div>

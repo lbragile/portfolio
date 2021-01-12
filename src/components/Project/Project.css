@@ -7,7 +7,7 @@ hr {
 }
 
 .see-more-or-less {
-  color: cyan;
+  color: rgb(116, 172, 255);
 }
 
 .see-more-or-less:hover {
@@ -53,11 +53,41 @@ blockquote p {
   color: black;
 }
 
+.card-body {
+  justify-content: space-around;
+}
+
 .card img {
-  max-width: 100%;
+  max-width: 45%;
+}
+
+.card .desc {
+  max-width: 37.5%;
 }
 
 .card li {
-  font-size: 1.2rem;
-  padding: 5px 20px;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .card img,
+  .card .desc {
+    max-width: 100%;
+  }
+
+  .card iframe {
+    width: 100%;
+  }
+
+  .link-buttons .btn {
+    padding: 5px;
+    display: inline-block;
+  }
+
+  .card li {
+    font-size: 1rem;
+    padding: 3px 2px;
+    font-size: 0.9rem;
+  }
 }

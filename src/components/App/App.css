@@ -15,6 +15,10 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  position: relative;
+}
+
 .required {
   color: red;
 }

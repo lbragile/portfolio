@@ -19,6 +19,19 @@
   }
 }
 
-.no-uderline:hover {
+.no-underline:hover {
   text-decoration: none;
+  color: inherit;
+}
+
+.copyright,
+.no-underline {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .copyright,
+  .no-underline {
+    font-size: 0.9rem;
+  }
 }

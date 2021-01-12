@@ -134,7 +134,7 @@ export default function ContactForm() {
             {sent ? "Sent" : "Send"}
           </Button>
 
-          <Button ref={resetBtn} type="reset" variant="secondary" className="ml-1" id="resetButton">
+          <Button ref={resetBtn} type="reset" variant="secondary" id="resetButton">
             Clear
           </Button>
         </div>

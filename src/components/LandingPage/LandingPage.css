@@ -2,10 +2,15 @@
   max-width: 90%;
 }
 
-#header-img {
-  width: 60%;
-  height: 30%;
-  margin-bottom: 20px;
+#portait {
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 15%;
+}
+
+#header-title {
+  width: 70%;
+  margin-left: 20px;
 }
 
 .scroll-down-hint {
@@ -42,6 +47,8 @@
   width: 0;
   height: 0;
   border: none;
+  position: relative;
+  left: -1000px;
 }
 
 .preview-resume {
