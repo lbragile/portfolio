@@ -21,6 +21,9 @@ function App() {
     document.body.style.color = dark ? "white" : "black";
     document.body.style.background = dark ? "rgb(29, 31, 33)" : "#efefef";
 
+    // portrait image
+    document.getElementById("portrait").style.border = "3px solid " + (dark ? "white" : "#121212");
+
     // cards
     document.querySelectorAll(".card, .card-header, .list-group-item").forEach((x) => {
       x.style.background = dark ? "white" : "rgb(29, 31, 33)";
@@ -33,7 +36,7 @@ function App() {
       x.style.borderBottom = "none";
     });
 
-    document.querySelectorAll(".card-header").forEach((x) => {
+    document.querySelectorAll(".card-header, .card-footer").forEach((x) => {
       x.style.background = dark ? "#efefef" : "#101010";
     });
 

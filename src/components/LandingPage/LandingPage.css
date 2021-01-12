@@ -2,27 +2,45 @@
   max-width: 90%;
 }
 
-#portait {
-  border-radius: 50%;
-  border: 3px solid white;
-  width: 15%;
+.row div {
+  position: relative;
 }
 
-#header-title {
-  width: 70%;
+#portrait {
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 100%;
+}
+
+.header-title {
+  width: 100%;
   margin-left: 20px;
+  font-family: "Chewy";
+  font-size: 6rem;
+}
+
+.top-title {
+  color: rgb(95, 173, 95);
+}
+
+.bottom-title {
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: grey;
+  font-size: 5rem;
 }
 
 .scroll-down-hint {
   animation: bounce 2s infinite;
   animation-fill-mode: both;
   position: relative;
-  top: 5px;
+  top: 30px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.3rem;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 75px;
 }
 
 .waving-hand {
@@ -88,5 +106,28 @@
   .top-lang {
     width: 75%;
     margin: auto;
+  }
+
+  #resume-frame {
+    margin-bottom: 30px;
+  }
+
+  #portrait {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-title {
+    margin: 20px 0 0 0;
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .bottom-title {
+    margin-top: 10px;
+    font-size: 2rem;
+    text-align: center;
   }
 }

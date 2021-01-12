@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import "./Project.css";
 
 export default function Project(props) {
-  const MAX_DESC_LENGTH = useRef(150);
+  const MAX_DESC_LENGTH = useRef(400);
 
   const [seeMore, setSeeMore] = useState(false);
 
@@ -39,13 +39,9 @@ export default function Project(props) {
   return (
     <div className="container text-white anchor-top my-4" id={props.name}>
       <div className="card">
-        <h2 className="card-header text-center">{props.name}</h2>
+        <h3 className="card-header text-center">{props.name}</h3>
         <div className="card-body text-center row">
-          {props.youtube ? (
-            <iframe title="TabMerger v1.5.0 Sample Use Case" width="50%" src={props.youtube} />
-          ) : (
-            <img src={props.src} alt={props.alt} className="card-img-left rounded" />
-          )}
+          <img src={props.src} alt={props.alt} className="card-img-left rounded" />
 
           <div className="desc pt-2">
             <h4 className="card-title mt-3 mb-2">
@@ -72,10 +68,9 @@ export default function Project(props) {
                 );
               })}
             </ul>
-
-            <div className="link-buttons pt-4 text-center">{ButtonType()}</div>
           </div>
         </div>
+        <div className="card-footer text-center link-buttons">{ButtonType()}</div>
       </div>
     </div>
   );

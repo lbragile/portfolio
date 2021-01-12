@@ -33,9 +33,15 @@ export default function LandingPage() {
   }
   return (
     <div className="container" id="landingpage-section">
-      <div className="row mt-4 mb-5">
-        <img src="./images/portrait.png" alt="My portrait" id="portait" />
-        <img src="./images/header.png" alt="My name name & expertise" id="header-title" />
+      <div className="row mt-4 mb-5 d-flex align-items-center">
+        <div className="col-sm-2">
+          <img src="./images/portrait.png" alt="My portrait" id="portrait" />
+        </div>
+        <div className="col-sm-10">
+          {/* <img src="./images/header.png" alt="My name name & expertise" id="header-title" /> */}
+          <p className="header-title top-title">Lior Bragilevsky</p>
+          <p className="header-title bottom-title">Full Stack Developer & DevOps Engineer</p>
+        </div>
       </div>
       <div className="row">
         <div className="col-sm-6" id="about-section">

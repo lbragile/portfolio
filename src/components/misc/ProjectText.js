@@ -3,7 +3,7 @@ import React from "react";
 const ProjectText = [
   {
     name: "TabMerger",
-    youtube: "https://www.youtube.com/embed/9eXmYE49jxA?autoplay=1",
+    src: "./images/tabmerger.gif",
     alt: "Quick demo of TabMerger showing what a sample use case is like",
     description: (
       <span>
@@ -39,7 +39,13 @@ const ProjectText = [
         chessCAMO is a newly proposed chess engine with a built-in variant that stands for Calculations Always Make
         Opportunities and was inspired by the very popular chess variant Crazyhouse. The "CAMO" portion comes from the
         idea that in this variant, at any turn, a player can sacrifice making a move to replace one of their pieces with
-        a piece from the "piece reservoir". This has the affect of camouflaging each piece that is on the board.
+        a piece from the "piece reservoir". This has the affect of camouflaging each piece that is on the board. As a
+        result, very unique gameplay can be observed as now a king cannot simply castle to safety and then be surrounded
+        by friendly pieces like in CrazyHouse. Instead, each peace on the board can be used as a temporary placeholder
+        that is eyeing a specific square/path which can be replaced at any moment. An added difficult is the fact that
+        the peice reservoir is limited and non-refillable. Thus, each player must budget their peice substitution well
+        in advance in order to be successful. This differs from CrazyHouse where you could refill your inventory by
+        capturing an opponents peice.
       </span>
     ),
     implementation: [
@@ -63,6 +69,10 @@ const ProjectText = [
         date dataset API calls. Main features include, global statistics, country hover analysis, continent selection,
         on-click graphs, and detailed tables. The core principle of the simpleglobalstats brand is simplicity which is
         why it is kept simple and elegant to provide the user with all the necessary information at their finger tips.
+        The user can simply press on a country to see all the relevant statistics presented in the headers above.
+        Additionally, charts are provided corresponding to the clicked country. There are settings that filter specific
+        continents, statistics, hide/show country names, and filter the data table below. Lastly, the generated charts
+        are interactive as well.
       </span>
     ),
     implementation: ["HTML5, CSS3, Javascript (jQuery)", "AJAX → API Communication", "Git → Version Control"],
@@ -101,7 +111,9 @@ const ProjectText = [
         A chat system with an admin and users that communicate with the admin. The admin has a special namespace where
         they can see all active users that want to chat as well as "tabs" where the communication with unique users
         happens. A MongoDB database is used to persist the messages in each chat room in case of a reload/disconnect
-        event.
+        event. The chat menu shows your username, all the messages you sent, and the responses you obtained (from the
+        admin). Incoming and outgoing messages are also timestamped to provide more detailed statistics to both parties.
+        The admin can see which users are logged in through a special administrator access only window.
       </span>
     ),
     implementation: [
