@@ -114,7 +114,7 @@ export default function LandingPage() {
               📈
             </span>
           </h2>
-          <div className="about-img text-center d-flex flex-wrap justify-content-justify-content-between my-3">
+          <div className="about-img text-center d-flex flex-wrap justify-content-justify-content-between">
             {STATS.map((x) => {
               return <img align="center" className={x.class + " my-1"} src={x.src} alt={x.alt} key={Math.random()} />;
             })}

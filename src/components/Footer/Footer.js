@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <section className="footer">
-        <div className="container py-4 text-white">
+        <div className="container py-2 px-0 text-white">
           <span className="copyright">Copyright &copy; {new Date().getFullYear()} Lior Bragilevsky </span>
           <div className="d-inline-block float-right">
             <a href="#landingpage-section" className="no-underline">
