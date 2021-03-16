@@ -1,4 +1,10 @@
-const STATS = [
+export interface IStats {
+  class: string;
+  src: string;
+  alt: string;
+}
+
+const STATS: IStats[] = [
   {
     class: "github-stats mr-2",
     src:

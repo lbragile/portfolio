@@ -4,22 +4,18 @@ import axios from "axios";
 import { Button, Form } from "react-bootstrap";
 import "./ContactForm.css";
 
-export default function ContactForm() {
-  const [sent, setSent] = useState(false);
-  const [email, setEmail] = useState("");
+export default function ContactForm(): JSX.Element {
+  const [sent, setSent] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
 
-  var resetBtn = useRef();
+  var resetBtn = useRef<HTMLButtonElement>(null);
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent): Promise<void> {
     e.preventDefault();
-    var formData = new FormData(e.target);
-    try {
-      await axios.post("https://tabmerger-backend.herokuapp.com/contact", [...formData]);
-      resetBtn.current.click();
-      setSent(true);
-    } catch (err) {
-      console.error(err);
-    }
+    var formData: FormData = new FormData(e.target as HTMLFormElement);
+    await axios.post("https://tabmerger-backend.herokuapp.com/contact", [...formData]);
+    resetBtn.current?.click();
+    setSent(true);
   }
 
   return (
@@ -109,8 +105,8 @@ export default function ContactForm() {
           <Form.Control
             name="message"
             as="textarea"
-            rows="10"
-            cols="30"
+            rows={10}
+            cols={30}
             placeholder="If you would like to connect, please share your social media and/or website here..."
             required
             onFocus={() => setSent(false)}
@@ -133,7 +129,6 @@ export default function ContactForm() {
           <Button type="submit" variant={sent ? "success" : "primary"}>
             {sent ? "Sent" : "Send"}
           </Button>
-
           <Button ref={resetBtn} type="reset" variant="secondary" id="resetButton">
             Clear
           </Button>

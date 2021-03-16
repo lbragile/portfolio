@@ -1,54 +1,56 @@
-import React, { useState, useEffect } from "react";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 
-import Navbar from "../Navbar/Navbar.js";
-import LandingPage from "../LandingPage/LandingPage.js";
+import React, { useState, useEffect } from "react";
+
+import Navbar from "../Navbar/Navbar";
+import LandingPage from "../LandingPage/LandingPage";
 import Project from "../Project/Project";
 import ContactForm from "../ContactForm/ContactForm";
-import Footer from "../Footer/Footer.js";
+import Footer from "../Footer/Footer";
 
-import ProjectText from "../misc/ProjectText";
+import ProjectText, { IProject } from "../misc/ProjectText";
 import "./App.css";
-function App() {
-  const [dark, setDark] = useState(true);
+
+export default function App(): JSX.Element {
+  const [dark, setDark] = useState<boolean>(true);
 
   useEffect(() => {
-    document.querySelector(".custom-control-input").checked = dark;
+    (document.querySelector(".custom-control-input") as HTMLInputElement).checked = dark;
 
     document.body.style.color = dark ? "white" : "black";
     document.body.style.background = dark ? "rgb(29, 31, 33)" : "#efefef";
 
     // portrait image
-    document.getElementById("portrait").style.border = "3px solid " + (dark ? "white" : "#121212");
+    (document.getElementById("portrait") as HTMLImageElement).style.border =
+      "3px solid " + (dark ? "white" : "#121212");
 
     // cards
     document.querySelectorAll(".card").forEach((x) => {
-      x.style.background = dark ? "white" : "rgb(29, 31, 33)";
-      x.style.color = dark ? "black" : "white";
+      (x as HTMLDivElement).style.background = dark ? "white" : "rgb(29, 31, 33)";
+      (x as HTMLDivElement).style.color = dark ? "black" : "white";
     });
 
     document.querySelectorAll(".card-header, .card-footer").forEach((x) => {
-      x.style.background = dark ? "#efefef" : "#101010";
+      (x as HTMLDivElement).style.background = dark ? "#efefef" : "#101010";
     });
 
     // social media buttons
     document.querySelectorAll(".btn-light").forEach((x) => {
-      x.style.background = dark ? "#efefef" : "#676767";
+      (x as HTMLDivElement).style.background = dark ? "#efefef" : "#676767";
     });
 
     document.querySelectorAll(".btn-light svg").forEach((x) => {
-      x.style.color = dark ? "black" : "white";
+      (x as HTMLDivElement).style.color = dark ? "black" : "white";
     });
 
     // double arrow
-    document.querySelector(".scroll-down-hint").style.color = dark ? "white" : "black";
+    (document.querySelector(".scroll-down-hint") as HTMLSpanElement).style.color = dark ? "white" : "black";
 
     // footer
     document.querySelectorAll(".copyright, .no-underline").forEach((x) => {
-      x.style.color = dark ? "white" : "black";
+      (x as HTMLDivElement).style.color = dark ? "white" : "black";
     });
   }, [dark]);
 
@@ -64,7 +66,7 @@ function App() {
       </div>
 
       <Navbar />
-      <LandingPage src="./images/banner.png" />
+      <LandingPage />
 
       <section className="projects anchor" id="project-section">
         <h2 className="text-center">
@@ -73,7 +75,7 @@ function App() {
             💪
           </span>
         </h2>
-        {ProjectText.map((x) => {
+        {ProjectText.map((x: IProject) => {
           return (
             <Project
               name={x.name}
@@ -97,5 +99,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

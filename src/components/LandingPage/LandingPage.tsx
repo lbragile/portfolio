@@ -1,35 +1,44 @@
 import React, { useRef, useState } from "react";
-import "./LandingPage.css";
 import { FaAngleDoubleDown } from "react-icons/fa";
 
 import { Button } from "react-bootstrap";
 import { FaReddit, FaStackOverflow } from "react-icons/fa";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
-import STATS from "../misc/GitHubStats";
+import STATS, { IStats } from "../misc/GitHubStats";
+import "./LandingPage.css";
+
+export interface ILinks {
+  url: string;
+  text: string;
+  icon: JSX.Element;
+}
 
 export default function LandingPage() {
-  const LINKS = useRef([
+  const LINKS = useRef<Array<ILinks>>([
     { url: "https://github.com/lbragile/", text: "GitHub", icon: <AiFillGithub size="1.4rem" color="black" /> }, // prettier-ignore
     { url: "https://www.linkedin.com/in/liorbragilevsky/", text: "LinkedIn", icon: <AiFillLinkedin size="1.4rem" color="black" /> }, // prettier-ignore
     { url: "https://stackoverflow.com/users/4298115/lbragile", text: "StackOverflow", icon: <FaStackOverflow size="1.4rem" color="black" /> }, // prettier-ignore
     { url: "https://www.reddit.com/user/lbragile_dev", text: "Reddit", icon: <FaReddit size="1.4rem" color="black" /> }, // prettier-ignore
   ]);
 
-  var resumeRef = useRef();
+  var resumeRef = useRef<HTMLDivElement>(null);
 
-  const [resume, setResume] = useState(false);
+  const [resume, setResume] = useState<boolean>(false);
 
   function handleResumeClick() {
-    resumeRef.current.style.opacity = +!resume;
-    resumeRef.current.style.width = resume ? "0" : "auto";
-    resumeRef.current.style.height = resume ? "0" : "auto";
-    resumeRef.current.style.left = resume ? "-1000px" : "0";
+    const resumeBtn = resumeRef.current;
+    if (resumeBtn) {
+      resumeBtn.style.opacity = (+!resume).toString();
+      resumeBtn.style.width = resume ? "0" : "auto";
+      resumeBtn.style.height = resume ? "0" : "auto";
+      resumeBtn.style.left = resume ? "-1000px" : "0";
 
-    resumeRef.current.style.transition = "opacity 1s";
-    resumeRef.current.style.transition = "left 1s";
+      resumeBtn.style.transition = "opacity 1s";
+      resumeBtn.style.transition = "left 1s";
 
-    setResume(!resume);
+      setResume(!resume);
+    }
   }
   return (
     <div className="container" id="landingpage-section">
@@ -68,18 +77,20 @@ export default function LandingPage() {
             on a step that you figured out a while ago. Feel free to reach out to me at any of the following social
             media platforms.
             <span className="d-flex justify-content-center row my-4">
-              {LINKS.current.map((x, i) => {
-                return (
-                  <Button
-                    variant="light"
-                    className={i > 0 ? "ml-1" : ""}
-                    onClick={() => window.open(x.url, "_blank")}
-                    key={Math.random()}
-                  >
-                    {x.icon}
-                  </Button>
-                );
-              })}
+              {LINKS.current.map(
+                (x: ILinks, i): JSX.Element => {
+                  return (
+                    <Button
+                      variant="light"
+                      className={i > 0 ? "ml-1" : ""}
+                      onClick={() => window.open(x.url, "_blank")}
+                      key={Math.random()}
+                    >
+                      {x.icon}
+                    </Button>
+                  );
+                }
+              )}
             </span>
           </p>
 
@@ -115,9 +126,11 @@ export default function LandingPage() {
             </span>
           </h2>
           <div className="about-img text-center d-flex flex-wrap justify-content-justify-content-between">
-            {STATS.map((x) => {
-              return <img align="center" className={x.class + " my-1"} src={x.src} alt={x.alt} key={Math.random()} />;
-            })}
+            {STATS.map(
+              (x: IStats): JSX.Element => {
+                return <img className={x.class + " my-1"} src={x.src} alt={x.alt} key={Math.random()} />;
+              }
+            )}
           </div>
         </div>
       </div>

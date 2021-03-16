@@ -2,15 +2,22 @@ import React, { useRef, useEffect } from "react";
 import "./Navbar.css";
 
 import ProjectText from "../misc/ProjectText";
-export default function Navbar() {
-  var navRef = useRef();
-  var prevY = useRef(window.scrollY);
+
+export interface IEventTarget extends EventTarget {
+  scrollY: number;
+}
+
+export default function Navbar(): JSX.Element {
+  var navRef = useRef<HTMLDivElement>(null);
+  var prevY = useRef<number>(window.scrollY);
 
   useEffect(() => {
-    function hideOrShowNav(e) {
-      const offset = e.currentTarget.scrollY;
-      navRef.current.style.transition = "all 1s";
-      navRef.current.style.opacity = +(prevY.current > offset);
+    function hideOrShowNav(e: Event) {
+      const offset = (e?.currentTarget as IEventTarget).scrollY;
+      if (navRef.current) {
+        navRef.current.style.transition = "all 1s";
+        navRef.current.style.opacity = (+(prevY.current > offset)).toString();
+      }
       prevY.current = offset;
     }
 
@@ -49,7 +56,7 @@ export default function Navbar() {
               Projects
             </a>
             <div className="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-              {ProjectText.map((x, i) => {
+              {ProjectText.map((x: { name: string }, i) => {
                 return (
                   <span key={Math.random()}>
                     {i === ProjectText.length - 1 ? <div className="dropdown-divider"></div> : null}

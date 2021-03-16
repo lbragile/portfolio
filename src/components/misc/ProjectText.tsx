@@ -1,6 +1,18 @@
 import React from "react";
 
-const ProjectText = [
+export interface IProject {
+  name: string;
+  src: string;
+  alt: string;
+  description: JSX.Element;
+  implementation: string[];
+  youtube?: string;
+  github?: string;
+  docs?: string;
+  website?: string;
+}
+
+const ProjectText: IProject[] = [
   {
     name: "TabMerger",
     src: "./images/tabmerger.gif",
@@ -18,9 +30,9 @@ const ProjectText = [
       </span>
     ),
     implementation: [
-      "HTML5, CSS3, Bootstrap4, JS (React)",
+      "HTML5, CSS3, Bootstrap4, JS/TS & React",
       "Markdown & YAML → Documentation & Templates for Issues/Pull Requests",
-      "jsDoc → Codebase Documentation",
+      "jsDoc & typeDoc → Codebase Documentation",
       "Jest → Unit Testing",
       "CI/CD → GitHub Actions",
       "Git → Version Control",
@@ -145,7 +157,7 @@ const ProjectText = [
       </span>
     ),
     implementation: [
-      "HTML5, CSS3, Bootstrap4, JS",
+      "HTML5, CSS3, Bootstrap4, JS/TS",
       "React & JSX → User Interface",
       "NodeJS, ExpressJS, Socket.io → Client/Server Communication",
       "Git → Version Control",

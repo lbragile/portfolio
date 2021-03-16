@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowUp } from "react-icons/fa";
 import "./Footer.css";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <>
       <section className="footer">

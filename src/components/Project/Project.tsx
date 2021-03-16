@@ -1,14 +1,15 @@
 import React, { useState, useRef } from "react";
 import { Button } from "react-bootstrap";
+import { IProject } from "../misc/ProjectText";
 import "./Project.css";
 
-export default function Project(props) {
+export default function Project(props: IProject): JSX.Element {
   const MAX_DESC_LENGTH = useRef(400);
 
   const [seeMore, setSeeMore] = useState(false);
 
-  function ButtonType() {
-    var urls = [], variant_type = [], btn_text = []; // prettier-ignore
+  function ButtonType(): JSX.Element[] {
+    var urls: string[] = [], variant_type: string[] = [], btn_text: string[] = []; // prettier-ignore
     if (props.github) {
       urls.push(props.github);
       variant_type.push("primary");
@@ -25,15 +26,17 @@ export default function Project(props) {
       btn_text.push("Visit Site");
     }
 
-    return variant_type.map((x, i) => {
-      return (
-        <a href={urls[i]} target="_blank" rel="noopener noreferrer" key={Math.random()}>
-          <Button variant={x} className="mr-2">
-            {btn_text[i]}
-          </Button>
-        </a>
-      );
-    });
+    return variant_type.map(
+      (x: string, i): JSX.Element => {
+        return (
+          <a href={urls[i]} target="_blank" rel="noopener noreferrer" key={Math.random()}>
+            <Button variant={x} className="mr-2">
+              {btn_text[i]}
+            </Button>
+          </a>
+        );
+      }
+    );
   }
 
   return (
@@ -62,7 +65,7 @@ export default function Project(props) {
               <b>Implementation</b>
             </h4>
             <ul className="list-group list-group-flush text-left mb-2 px-3">
-              {props.implementation.map((item) => {
+              {props.implementation.map((item: string) => {
                 return (
                   <li className="list-group-item" key={Math.random()}>
                     {item}
