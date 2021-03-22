@@ -8,8 +8,8 @@ export interface IEventTarget extends EventTarget {
 }
 
 export default function Navbar(): JSX.Element {
-  var navRef = useRef<HTMLDivElement>(null);
-  var prevY = useRef<number>(window.scrollY);
+  const navRef = useRef<HTMLDivElement>(null);
+  const prevY = useRef<number>(window.scrollY);
 
   useEffect(() => {
     function hideOrShowNav(e: Event) {

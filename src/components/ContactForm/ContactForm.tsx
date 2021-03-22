@@ -8,11 +8,11 @@ export default function ContactForm(): JSX.Element {
   const [sent, setSent] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 
-  var resetBtn = useRef<HTMLButtonElement>(null);
+  const resetBtn = useRef<HTMLButtonElement>(null);
 
   async function handleSubmit(e: React.FormEvent): Promise<void> {
     e.preventDefault();
-    var formData: FormData = new FormData(e.target as HTMLFormElement);
+    const formData: FormData = new FormData(e.target as HTMLFormElement);
     await axios.post("https://tabmerger-backend.herokuapp.com/contact", [...formData]);
     resetBtn.current?.click();
     setSent(true);

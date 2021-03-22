@@ -14,16 +14,14 @@ export interface ILinks {
   icon: JSX.Element;
 }
 
-export default function LandingPage() {
+export default function LandingPage(): JSX.Element {
   const LINKS = useRef<Array<ILinks>>([
     { url: "https://github.com/lbragile/", text: "GitHub", icon: <AiFillGithub size="1.4rem" color="black" /> }, // prettier-ignore
     { url: "https://www.linkedin.com/in/liorbragilevsky/", text: "LinkedIn", icon: <AiFillLinkedin size="1.4rem" color="black" /> }, // prettier-ignore
     { url: "https://stackoverflow.com/users/4298115/lbragile", text: "StackOverflow", icon: <FaStackOverflow size="1.4rem" color="black" /> }, // prettier-ignore
     { url: "https://www.reddit.com/user/lbragile_dev", text: "Reddit", icon: <FaReddit size="1.4rem" color="black" /> }, // prettier-ignore
   ]);
-
-  var resumeRef = useRef<HTMLDivElement>(null);
-
+  const resumeRef = useRef<HTMLDivElement>(null);
   const [resume, setResume] = useState<boolean>(false);
 
   function handleResumeClick() {
@@ -40,11 +38,12 @@ export default function LandingPage() {
       setResume(!resume);
     }
   }
+
   return (
     <div className="container" id="landingpage-section">
       <div className="row mt-4 mb-5 d-flex align-items-center">
         <div className="col-sm-2">
-          <img src="./images/portrait.png" alt="My portrait" id="portrait" />
+          <img src={process.env.PUBLIC_URL + "/images/portrait.png"} alt="My portrait" id="portrait" />
         </div>
         <div className="col-sm-10">
           {/* <img src="./images/header.png" alt="My name name & expertise" id="header-title" /> */}
@@ -58,7 +57,7 @@ export default function LandingPage() {
             Hey there! <img src="https://i.imgur.com/L1NxDZ2.gif" alt="waving hand" className="waving-hand" />
           </h2>
           <p className="text-justify">
-            My name is Lior Bragilevsky and I am a self taught full stack developer & DevOps Engineer that is always up
+            My name is Lior Bragilevsky and I am a self taught Full Stack Developer & DevOps Engineer that is always up
             to the challenge. I have firm goals to learn new things daily. My daily routine revolves around full stack
             projects that are of interest to me/for clients, play logical games like chess, workout, and hang out with
             friends.
@@ -67,8 +66,8 @@ export default function LandingPage() {
             I graduated with a MASc (Accelerated Program - First Class with Distinction) from Simon Fraser University in
             April 2020. This comes after completing my BASc (Honours with Distinction) in Engineering, again, at SFU in
             August 2018. During this time, I worked on a variety of machine learning projects and enhanced my coding
-            skills both in a team and individual setting. Ever since, I haven't looked back and am a proud author of
-            many open source projects.
+            skills both in a team and individual setting. Ever since, I haven&apos;t looked back and am a proud author
+            of many open source projects.
           </p>
 
           <p className="text-justify">
@@ -99,7 +98,11 @@ export default function LandingPage() {
               {resume ? "🙈 Resume" : "🙉 Resume"}
             </Button>
             <div id="resume-frame" ref={resumeRef}>
-              <iframe src="other/resume.pdf" title="Preview Resume" className="preview-resume" />
+              <iframe
+                src={process.env.PUBLIC_URL + "/other/resume.pdf"}
+                title="Preview Resume"
+                className="preview-resume"
+              />
             </div>
           </div>
         </div>
@@ -115,7 +118,13 @@ export default function LandingPage() {
             {Array(15)
               .fill(0)
               .map((_, i) => {
-                return <img src={"./images/badges/tech" + (i + 1) + ".svg"} alt="tech badge" key={Math.random()} />;
+                return (
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/badges/tech" + (i + 1) + ".svg"}
+                    alt="tech badge"
+                    key={Math.random()}
+                  />
+                );
               })}
           </div>
 

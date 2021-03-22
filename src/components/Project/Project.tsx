@@ -9,7 +9,7 @@ export default function Project(props: IProject): JSX.Element {
   const [seeMore, setSeeMore] = useState(false);
 
   function ButtonType(): JSX.Element[] {
-    var urls: string[] = [], variant_type: string[] = [], btn_text: string[] = []; // prettier-ignore
+    const urls: string[] = [], variant_type: string[] = [], btn_text: string[] = []; // prettier-ignore
     if (props.github) {
       urls.push(props.github);
       variant_type.push("primary");
@@ -45,7 +45,7 @@ export default function Project(props: IProject): JSX.Element {
         <h3 className="card-header text-center">{props.name}</h3>
         <div className="card-body text-center row">
           <div className="container-img my-auto">
-            <img src={props.src} alt={props.alt} className="card-img-left rounded" />
+            <img src={process.env.PUBLIC_URL + props.src} alt={props.alt} className="card-img-left rounded" />
           </div>
 
           <div className="desc my-auto">

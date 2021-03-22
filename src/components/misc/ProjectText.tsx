@@ -15,7 +15,7 @@ export interface IProject {
 const ProjectText: IProject[] = [
   {
     name: "TabMerger",
-    src: "./images/tabmerger.gif",
+    src: "/images/tabmerger.gif",
     alt: "Quick demo of TabMerger showing what a sample use case is like",
     description: (
       <span>
@@ -44,20 +44,20 @@ const ProjectText: IProject[] = [
   },
   {
     name: "chessCAMO",
-    src: "./images/gui.gif",
+    src: "/images/gui.gif",
     alt: "Graphical User Interface illustration for the final product",
     description: (
       <span>
         chessCAMO is a newly proposed chess engine with a built-in variant that stands for Calculations Always Make
-        Opportunities and was inspired by the very popular chess variant Crazyhouse. The "CAMO" portion comes from the
-        idea that in this variant, at any turn, a player can sacrifice making a move to replace one of their pieces with
-        a piece from the "piece reservoir". This has the affect of camouflaging each piece that is on the board. As a
-        result, very unique gameplay can be observed as now a king cannot simply castle to safety and then be surrounded
-        by friendly pieces like in CrazyHouse. Instead, each peace on the board can be used as a temporary placeholder
-        that is eyeing a specific square/path which can be replaced at any moment. An added difficult is the fact that
-        the peice reservoir is limited and non-refillable. Thus, each player must budget their peice substitution well
-        in advance in order to be successful. This differs from CrazyHouse where you could refill your inventory by
-        capturing an opponents peice.
+        Opportunities and was inspired by the very popular chess variant Crazyhouse. The &quot;CAMO&quot; portion comes
+        from the idea that in this variant, at any turn, a player can sacrifice making a move to replace one of their
+        pieces with a piece from the &quot;piece reservoir&quot;. This has the affect of camouflaging each piece that is
+        on the board. As a result, very unique gameplay can be observed as now a king cannot simply castle to safety and
+        then be surrounded by friendly pieces like in CrazyHouse. Instead, each peace on the board can be used as a
+        temporary placeholder that is eyeing a specific square/path which can be replaced at any moment. An added
+        difficult is the fact that the peice reservoir is limited and non-refillable. Thus, each player must budget
+        their peice substitution well in advance in order to be successful. This differs from CrazyHouse where you could
+        refill your inventory by capturing an opponents peice.
       </span>
     ),
     implementation: [
@@ -73,7 +73,7 @@ const ProjectText: IProject[] = [
   },
   {
     name: "SimplifyCOVID",
-    src: "./images/covid.gif",
+    src: "/images/covid.gif",
     alt: "Illustration of how to use the covid19 statistics site",
     description: (
       <span>
@@ -97,7 +97,7 @@ const ProjectText: IProject[] = [
   },
   {
     name: "LoginPlay",
-    src: "./images/login.gif",
+    src: "/images/login.gif",
     alt: "Demonstration of the server client communication",
     description: (
       <span>
@@ -121,16 +121,17 @@ const ProjectText: IProject[] = [
   },
   {
     name: "ChatIn",
-    src: "./images/chat.gif",
+    src: "/images/chat.gif",
     alt: "Chatting with admin through a custom made chat system with login system",
     description: (
       <span>
         A chat system with an admin and users that communicate with the admin. The admin has a special namespace where
-        they can see all active users that want to chat as well as "tabs" where the communication with unique users
-        happens. A MongoDB database is used to persist the messages in each chat room in case of a reload/disconnect
-        event. The chat menu shows your username, all the messages you sent, and the responses you obtained (from the
-        admin). Incoming and outgoing messages are also timestamped to provide more detailed statistics to both parties.
-        The admin can see which users are logged in through a special administrator access only window.
+        they can see all active users that want to chat as well as &quot;tabs&quot; where the communication with unique
+        users happens. A MongoDB database is used to persist the messages in each chat room in case of a
+        reload/disconnect event. The chat menu shows your username, all the messages you sent, and the responses you
+        obtained (from the admin). Incoming and outgoing messages are also timestamped to provide more detailed
+        statistics to both parties. The admin can see which users are logged in through a special administrator access
+        only window.
       </span>
     ),
     implementation: [
@@ -144,7 +145,7 @@ const ProjectText: IProject[] = [
   },
   {
     name: "Portfolio",
-    src: "./images/portfolio.gif",
+    src: "/images/portfolio.gif",
     alt: "A walkthrough my full stack developer portfolio website",
     description: (
       <span>
@@ -153,7 +154,7 @@ const ProjectText: IProject[] = [
         front end communicates with the server (backend) via API calls with Axios Nodemailer is used to allow users to
         connect with me (through the contact form) by sending an email to my adress with the relevant information. As
         always, when dealing with sensitive information, environment variables are implemented, rather than
-        "hard-coding" the values in the public script.
+        &quot;hard-coding&quot; the values in the public script.
       </span>
     ),
     implementation: [

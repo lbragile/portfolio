@@ -30,8 +30,8 @@ hr {
 .card img {
   width: 90%;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 12px 3px #0584ff;
-  box-shadow: 0px 0px 12px 3px #0584ff;
+  -webkit-box-shadow: 0 0 12px 3px #0584ff;
+  box-shadow: 0 0 12px 3px #0584ff;
 }
 
 .card .desc {
@@ -62,8 +62,8 @@ hr {
   .card img {
     width: 100%;
     max-height: 250px;
-    -webkit-box-shadow: 0px 0px 5px 3px #0584ff;
-    box-shadow: 0px 0px 5px 3px #0584ff;
+    -webkit-box-shadow: 0 0 5px 3px #0584ff;
+    box-shadow: 0 0 5px 3px #0584ff;
   }
 
   .link-buttons .btn {
@@ -73,7 +73,6 @@ hr {
   }
 
   .card li {
-    font-size: 1rem;
     padding: 3px 2px;
     font-size: 0.9rem;
   }

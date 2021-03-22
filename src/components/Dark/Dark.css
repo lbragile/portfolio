@@ -1,0 +1,9 @@
+.custom-control-label:hover {
+  cursor: pointer;
+}
+
+.custom-switch {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}

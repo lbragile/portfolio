@@ -23,8 +23,7 @@ body {
   color: red;
 }
 
-a:hover,
-.custom-control-label:hover {
+a:hover {
   cursor: pointer;
 }
 
@@ -32,12 +31,6 @@ a:hover,
   border: none;
   outline: none;
   box-shadow: none;
-}
-
-.custom-switch {
-  position: absolute;
-  right: 20px;
-  top: 60px;
 }
 
 @media screen and (max-width: 600px) {

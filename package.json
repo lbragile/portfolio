@@ -13,13 +13,22 @@
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
     "@types/node": "^14.14.35",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.22.0",
     "gh-pages": "^3.1.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0",
     "typescript": "^4.2.3"
   },
   "scripts": {
@@ -27,10 +36,19 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "tsc": "tsc --project ./config/tsconfig.json",
+    "lint": "npx eslint src -c ./config/.eslintrc.js --ignore-path .gitignore .",
+    "lint:style": "npx stylelint src --config ./config/.stylelintrc.json"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "./config/.eslintrc.js"
+  },
+  "stylelint": {
+    "extends": "./config/.stylelintrc.json"
+  },
+  "babel": {
+    "extends": "./config/.babelrc.json"
   },
   "browserslist": {
     "production": [
